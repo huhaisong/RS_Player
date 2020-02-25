@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/x458"
+        android:layout_height="@dimen/y143"
+        android:background="@drawable/level2_2items_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/y5"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginRight="@dimen/x5"
+            android:layout_marginTop="@dimen/y5"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time_setting_workTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/time_holiday_main_menu_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textSize="@dimen/ts24"
+                android:gravity="center"
+                android:text="@string/time_setting_work_time"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/time_holiday_main_menu_focused"
+                android:focusable="true"
+                android:textSize="@dimen/ts24"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/time_setting_holiday_time"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/time_setting_item_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y20"
+        android:orientation="vertical"/>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x255"
+        android:layout_height="@dimen/y130"
+        android:background="@drawable/level3_2menu_unsel_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_advanced_beacon_mode_on"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level3_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:paddingRight="@dimen/x10"
+                android:text="@string/on"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_advanced_beacon_mode_off"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level3_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:paddingRight="@dimen/x10"
+                android:text="@string/off"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,137 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MediaPlayerApk</string>
+
+    <!--一级菜单-->
+    <string name="timer_setting">Timer Settings</string>
+    <string name="detail_setting">Advanced Settings</string>
+    <string name="video_preview">Video Preview</string>
+    <string name="Photo_Preview" tools:ignore="ExtraTranslation">Photo Preview</string>
+    <string name="play_model">Playback Mode Select</string>
+    <string name="image_setting">Photo Settings</string>
+    <string name="quit">Exit</string>
+
+    <string name="introduce_timer_setting" tools:ignore="ExtraTranslation">Timer\'s setting and modification, weekly-based holidaysetting and modifiation can be made.</string>
+    <string name="introduce_detail_setting" tools:ignore="ExtraTranslation">You can make various settings.</string>
+    <string name="introduce_video_preview" tools:ignore="ExtraTranslation">You can preview all video files.</string>
+    <string name="introduce_play_model" tools:ignore="ExtraTranslation">You can select 3 types of video playback modes.</string>
+    <string name="introduce_image_setting" tools:ignore="ExtraTranslation">You can play BGM with photo slideshow.</string>
+    <string name="introduce_quit" tools:ignore="ExtraTranslation">Exit setting menu</string>
+
+    <!--时间设置-->
+    <string name="time_setting_work_time">New Registration Settings</string>
+    <string name="time_setting_holiday_time">Holiday Settings</string>
+    <string name="time_setting_work_time_start">From</string>
+    <string name="time_setting_work_time_end">To</string>
+    <string name="Monday">Monday</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+    <string name="Thursday">Thursday</string>
+    <string name="Friday">Friday</string>
+    <string name="Saturday">Saturday</string>
+    <string name="Sunday">Sunday</string>
+    <string name="everyday">Everyday</string>
+    <string name="ensure">Register</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="Holiday">Holiday</string>
+    <string name="introduce_time_setting_work_time" tools:ignore="ExtraTranslation">New timer settings can be made on weekly basis.</string>
+    <string name="introduce_time_setting_holiday_time" tools:ignore="ExtraTranslation">Holiday timer settings can be made on weekly basis.</string>
+    <string name="introduce_time_setting_holiday_time_" tools:ignore="ExtraTranslation">Registered holiday setting can be modified or deleted</string>
+    <string name="introduce_time_setting_work_time_" tools:ignore="ExtraTranslation">Registered timer setting can be modified or deleted</string>
+
+    <!--详细设置-->
+    <string name="Data_Setting">Date Setting</string>
+    <string name="Time_Setting">Time Setting</string>
+    <string name="Display_Ratio_Setting">Display Ratio Setting</string>
+    <string name="Language">Language</string>
+    <string name="Reset_Setting">Reset Setting</string>
+    <string name="ECO_mode" tools:ignore="ExtraTranslation">ECO Mode</string>
+    <string name="Beacon_mode" tools:ignore="ExtraTranslation">Beacon Mode</string>
+    <string name="Face_check" tools:ignore="ExtraTranslation">Motion Sensor</string>
+    <string name="Firmware_Version">Firmware Version</string>
+    <string name="Factory_Setting">Factory Setting</string>
+
+
+    <string name="introduce_Data_Setting" tools:ignore="ExtraTranslation">You can set the current date.</string>
+    <string name="introduce_Time_Setting" tools:ignore="ExtraTranslation">You can set the current time by 24-hour mode.</string>
+    <string name="introduce_Display_Ratio_Setting" tools:ignore="ExtraTranslation">Display ratio can be set as 「UNIFORM」 or 「FULL」.</string>
+    <string name="introduce_Language" tools:ignore="ExtraTranslation">Display language can be set as[日本語] or [English].</string>
+    <string name="introduce_Reset_Setting" tools:ignore="ExtraTranslation">Automatic reboot can be set.</string>
+    <string name="introduce_ECO_mode" tools:ignore="ExtraTranslation">Appionted　file can be played only in sense of  human motion.</string>
+    <string name="introduce_Beacon_mode" tools:ignore="ExtraTranslation">Appointed file will be displayed in sence of Beacon detected.</string>
+    <string name="introduce_Face_check" tools:ignore="ExtraTranslation">Appionted file can be played in sence of human  motion.</string>
+    <string name="introduce_Firmware_Version" tools:ignore="ExtraTranslation">You can check firmware version here.</string>
+    <string name="introduce_Factory_Setting" tools:ignore="ExtraTranslation">You can return to factory settings.</string>
+    <string name="introduce_Hdmi_Setting" tools:ignore="ExtraTranslation">You can change HDMI output mode here.</string>
+
+    <string name="uniform">UNIFORM</string>
+    <string name="full">FULL</string>
+    <string name="english">English</string>
+    <string name="chinese">日本语</string>
+
+    <string name="introduce_uniform" tools:ignore="ExtraTranslation">Display ratio is maintained at original one.</string>
+    <string name="introduce_full" tools:ignore="ExtraTranslation">Full screen  display mode</string>
+    <string name="introduce_english" tools:ignore="ExtraTranslation">Display language can be set as[日本語] or [English].</string>
+    <string name="introduce_chinese" tools:ignore="ExtraTranslation">Display language can be set as[日本語] or [English].</string>
+
+    <!--播放模式-->
+    <string name="play_back_mode_one_file">1 File Repeat</string>
+    <string name="play_back_mode_all_file">All File Repeat</string>
+    <string name="play_back_mode_program">Program Playback</string>
+    <string name="play_back_mode_Schedule" tools:ignore="ExtraTranslation">Schedule Playback</string>
+
+    <string name="introduce_play_back_mode_one_file" tools:ignore="ExtraTranslation">One specific file can be played repeatedly.</string>
+    <string name="introduce_play_back_mode_all_file" tools:ignore="ExtraTranslation">It plays all files repeatedly.</string>
+    <string name="introduce_play_back_mode_program" tools:ignore="ExtraTranslation">The maximum of 50 files can be played by the order of the files selected.</string>
+    <string name="introduce_play_back_mode_Schedule" tools:ignore="ExtraTranslation">You can appoint multiple files\' playback period,date,time,and turn.</string>
+
+    <!--图片设置-->
+    <string name="image_setting_direction_nomal">Normal</string>
+    <string name="image_setting_direction_random">Random</string>
+    <string name="image_setting_direction_up_to_down">Up to Down</string>
+    <string name="image_setting_direction_left_to_right">Left to Right</string>
+    <string name="image_setting_direction_horizontal_cross">Horizontal cross</string>
+    <string name="image_setting_slide_time_select">Slide time select</string>
+    <string name="image_setting_slide_pattern_select">Slide Pattern Select</string>
+    <string name="image_setting_bgm">BGM</string>
+
+    <string name="introduce_image_setting_slide_time_select" tools:ignore="ExtraTranslation">You can select the slideshow interval.</string>
+    <string name="introduce_image_setting_slide_pattern_select" tools:ignore="ExtraTranslation">You can select the slide pattern.</string>
+    <string name="introduce_image_setting_bgm" tools:ignore="ExtraTranslation">The maximum of 10 mp3 files can be programed as BGM.</string>
+
+    <!-- usb设置-->
+    <string name="copy_dialog_content" tools:ignore="ExtraTranslation"> Copy from USB memory to internal memory will be starting.Is it ok？</string>
+    <string name="usb_copy_prepare" tools:ignore="ExtraTranslation"> is preparing update！</string>
+    <string name="usb_copy_is_not_have_content" tools:ignore="ExtraTranslation"> No copyable file is found.\nPlease check USB memory again.</string>
+    <string name="usb_copy_is_not_have_folder" tools:ignore="ExtraTranslation">  No copyable folder is found.\nPlease check USB memroy again.</string>
+    <string name="usb_copy_complete" tools:ignore="ExtraTranslation"> the copy has completed！\nPull out the U disk to continue playing ！</string>
+
+    <string name="serial" tools:ignore="ExtraTranslation"> serial</string>
+    <string name="update_apk" tools:ignore="ExtraTranslation"> To update Mediaplayer application?</string>
+    <string name="impactTv" tools:ignore="ExtraTranslation"> impactTv</string>
+    <string name="event" tools:ignore="ExtraTranslation"> event</string>
+    <string name="video" tools:ignore="ExtraTranslation">Video</string>
+    <string name="photo" tools:ignore="ExtraTranslation">Photo</string>
+    <string name="hour">hr</string>
+    <string name="off">off</string>
+    <string name="on">on</string>
+
+
+    <string name="face_off" tools:ignore="ExtraTranslation">Off</string>
+    <string name="face_near" tools:ignore="ExtraTranslation">Near</string>
+    <string name="face_mid" tools:ignore="ExtraTranslation">Middle</string>
+
+    <string name="Program_Playback_List" tools:ignore="ExtraTranslation">Program Playback List</string>
+
+    <string name="information_of_external_no_file" tools:ignore="ExtraTranslation">There is no selected file in SD card</string>
+    <string name="information_of_internal_no_file" tools:ignore="ExtraTranslation">There is no selected file in internal storage </string>
+
+    <string name="mediaplayer_onFileError" tools:ignore="ExtraTranslation">Not support this file!</string>
+
+    <string name="set_start_time" tools:ignore="ExtraTranslation">From</string>
+    <string name="set_end_time" tools:ignore="ExtraTranslation">To</string>
+    <string name="set_date" tools:ignore="ExtraTranslation">setting date</string>
+    <string name="set_time" tools:ignore="ExtraTranslation">setting time</string>
+    <string name="set_reboot_hour" tools:ignore="ExtraTranslation">setting reboot hour</string>
+    <string name="hdmi_out_model" tools:ignore="ExtraTranslation">HDMI output</string>
+</resources>

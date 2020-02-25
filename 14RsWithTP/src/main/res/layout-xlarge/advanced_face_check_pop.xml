@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x255"
+        android:layout_height="@dimen/y130"
+        android:background="@drawable/level3_2menu_unsel_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_advanced_check_face_off"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level3_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:paddingRight="10dp"
+            android:text="@string/off"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24"  />
+
+
+        <TextView
+            android:id="@+id/tv_advanced_check_face_near"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level3_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:paddingRight="10dp"
+            android:text="@string/on"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24"  />
+
+        <!--    <TextView
+                android:id="@+id/tv_advanced_check_face_mid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level3_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:text="@string/face_mid"
+                android:textColor="@color/white"
+                android:textSize="24sp" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

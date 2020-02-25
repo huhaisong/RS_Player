@@ -1,0 +1,19 @@
+---- USBCopyActivity Matches (18 in 14 files) ----
+Activity_usbcopy.xml (14rswithtp\build\intermediates\res\merged\debug\layout):    tools:context="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity">
+Activity_usbcopy.xml (14rswithtp\build\intermediates\res\merged\debug\layout-large-v4):    tools:context="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity">
+Activity_usbcopy.xml (14rswithtp\build\intermediates\res\merged\debug\layout-xlarge-v4):    tools:context="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity">
+Activity_usbcopy.xml (14rswithtp\src\main\res\layout):    tools:context="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity">
+Activity_usbcopy.xml (14rswithtp\src\main\res\layout-large):    tools:context="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity">
+Activity_usbcopy.xml (14rswithtp\src\main\res\layout-xlarge):    tools:context="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity">
+AndroidManifest.xml (14rswithtp\build\intermediates\manifests\full\debug):        <activity android:name="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity" />
+AndroidManifest.xml (14rswithtp\build\intermediates\manifests\instant-run\debug):        <activity android:name="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity" />
+AndroidManifest.xml (14rswithtp\src\main):        <activity android:name=".usb_copy.USBCopyActivity" />
+Manifest-merger-debug-report.txt (14rswithtp\build\outputs\logs):activity#com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity
+Manifest.xml (14rswithtp\build\intermediates\instant-run-support\debug):        <activity android:name="com.example.hu.mediaplayerapk.usb_copy.USBCopyActivity" />
+OSDSettingActivity.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\ui\activity):                // Intent intent1 = new Intent(OSDSettingActivity.this, USBCopyActivity.class);
+USBCopyActivity.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\usb_copy):public class USBCopyActivity extends BaseActivity {
+USBCopyActivity.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\usb_copy):    private static final String TAG = "USBCopyActivity";
+USBCopyActivity.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\usb_copy):                USBCopyActivity.this.finish();
+USBCopyActivity.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\usb_copy):                            USBCopyTask usbCopyTask = new USBCopyTask(USBCopyActivity.this);
+USBCopyActivity.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\usb_copy):                                    APKUtils.installApk(USBCopyActivity.this, toFile.getAbsolutePath());
+USBReceive.java (14rswithtp\src\main\java\com\example\hu\mediaplayerapk\usb_copy):                Intent myIntent = new Intent(context, USBCopyActivity.class);

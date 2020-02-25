@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/x251"
+        android:layout_height="@dimen/y195"
+        android:background="@drawable/level3_3menu_unsel_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_advanced_firmware_version_app"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level3_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts18" />
+
+            <TextView
+                android:id="@+id/tv_advanced_firmware_version_android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level3_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts18" />
+
+            <TextView
+                android:id="@+id/tv_advanced_firmware_version_serial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level3_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts18" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

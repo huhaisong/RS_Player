@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y495"
+        android:layout_marginLeft="@dimen/x15"
+        android:background="@drawable/holiday_weekday_unsel_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Monday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Tuesday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Wednesday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Thursday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Friday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Saturday"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_time_setting_holiday_item7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/holiday_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Sunday"
+                android:textColor="@color/red"
+                android:textSize="@dimen/ts24" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_time_setting_holiday_confirm"
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y73"
+        android:layout_marginLeft="@dimen/x15"
+        android:layout_marginTop="@dimen/y50"
+        android:background="@drawable/holiday_confirm_focused"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:text="@string/ensure"
+        android:textColor="@color/white"
+        android:textSize="@dimen/ts24" />
+</LinearLayout>

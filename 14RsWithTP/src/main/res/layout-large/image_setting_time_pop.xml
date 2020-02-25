@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x251"
+        android:layout_height="@dimen/y258"
+        android:layout_weight="1"
+        android:background="@drawable/level3_4menu_unsel_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_image_setting_time_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level3_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="5sec"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:id="@+id/tv_image_setting_time_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level3_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="10sec"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:id="@+id/tv_image_setting_time_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level3_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="20sec"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:id="@+id/tv_image_setting_time_30"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level3_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="30sec"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+    </LinearLayout>
+
+</LinearLayout>

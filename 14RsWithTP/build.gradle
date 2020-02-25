@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+
+    defaultConfig {
+        applicationId "com.example.hu.mediaplayerapk"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 40
+        versionName "V.14RS.1.04.0"  //如果以basic命名则版本号要加20  V.Basic.1.02.3
+
+        externalNativeBuild {
+            cmake {
+                arguments "-DOpenCV_DIR=" + project(':opencv').projectDir + "/native/jni",
+                        "-DANDROID_TOOLCHAIN=clang",
+                        "-DANDROID_STL=c++_shared"
+                targets "detection_based_tracker"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+//            java.srcDirs = ['src']
+//            aidl.srcDirs = ['src']
+//            res.srcDirs = ['res']
+//            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path 'jni/CMakeLists.txt'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation files('libs/gson-2.5.jar')
+    implementation 'com.android.support:support-annotations:25.0.1'
+    implementation project(':opencv')
+}

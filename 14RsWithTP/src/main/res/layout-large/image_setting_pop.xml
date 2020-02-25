@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x419"
+        android:layout_height="@dimen/y458"
+        android:background="@drawable/nnnn6"
+        android:layout_marginBottom="@dimen/y3"
+        android:layout_marginRight="@dimen/x5"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_image_setting_SlideTimeSelect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level2_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/image_setting_slide_time_select"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:id="@+id/tv_image_setting_SlidePatternSelect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level2_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/image_setting_slide_pattern_select"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level2_item_focused"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x30"
+            android:text="impactv"
+            android:textColor="@color/gray_white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:id="@+id/tv_image_setting_bgm_impactv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level2_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/image_setting_bgm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level2_item_focused"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x30"
+            android:text="Event"
+            android:textColor="@color/gray_white"
+            android:textSize="@dimen/ts24" />
+
+        <TextView
+            android:id="@+id/tv_image_setting_bgm_event"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/level2_item_focused"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="@string/image_setting_bgm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+    </LinearLayout>
+</LinearLayout>

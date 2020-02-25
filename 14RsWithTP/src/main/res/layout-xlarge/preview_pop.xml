@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/preview_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:alpha="0.7"
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_width="@dimen/x540"
+        android:background="#161616"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="@dimen/y20"
+            android:layout_width="@dimen/x540"
+            android:layout_height="@dimen/y1080"
+            android:background="@drawable/file_list_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/y48"
+                android:background="@drawable/file_top_22"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/x52"
+                    android:layout_height="@dimen/y48"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:src="@drawable/file_top_21_video" />
+
+                <TextView
+                    android:id="@+id/tv_video_preview_directory_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/video_preview"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x14"
+                android:layout_marginRight="@dimen/x8"
+                android:layout_marginTop="@dimen/y140"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/tv_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_item10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_list_item_on_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x46"
+                android:layout_marginRight="@dimen/x40"
+                android:layout_marginBottom="@dimen/y60"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ib_back"
+                    android:layout_width="@dimen/x90"
+                    android:layout_height="@dimen/y80"
+                    android:background="@drawable/back_icon"
+                    android:padding="@dimen/x30" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <ImageButton
+                    android:id="@+id/ib_switch"
+                    android:layout_width="@dimen/x90"
+                    android:layout_height="@dimen/x90"
+                    android:background="@drawable/switch_folder"
+                    android:padding="@dimen/x20" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/video_one_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/y60"
+        android:layout_marginRight="@dimen/x300"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_selected_one_content"
+            android:layout_width="@dimen/x677"
+            android:layout_height="@dimen/y76"
+            android:layout_marginBottom="@dimen/y40"
+            android:background="@drawable/file_one_unsel_bg"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y40"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_one_file_ensure"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/ensure"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_one_cancel"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:focusable="false"
+             android:focusableInTouchMode="false"
+             android:text="現在の動画："
+             android:textColor="@color/white"
+             android:textSize="@dimen/ts24" />
+
+         <TextView
+             android:id="@+id/tv_video_info"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:focusable="false"
+             android:focusableInTouchMode="false"
+             android:text="現在無動画"
+             android:textColor="@color/white"
+             android:textSize="@dimen/ts24" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choose_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/y100"
+        android:layout_marginRight="@dimen/x100"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="@dimen/x677"
+            android:layout_height="@dimen/y76"
+            android:layout_marginBottom="@dimen/y40"
+            android:background="@drawable/file_one_unsel_bg"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:text="@string/Program_Playback_List"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+
+        <LinearLayout
+            android:layout_width="@dimen/x769"
+            android:layout_height="@dimen/y277"
+            android:background="@drawable/file_selected_list_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_selected_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_selected_item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_selected_item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_selected_item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y40"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_ensure"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/ensure"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_cancel"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_delete"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

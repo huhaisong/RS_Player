@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x406"
+        android:layout_height="@dimen/y723"
+        android:background="@drawable/nnnn10"
+        android:layout_marginTop="@dimen/y6"
+        android:paddingBottom="@dimen/y10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/x4"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textSize="@dimen/ts24"
+                android:gravity="center"
+                android:text="@string/Data_Setting"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/ts24"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Time_Setting"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Display_Ratio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:textSize="@dimen/ts24"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Display_Ratio_Setting"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Language"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/ts24"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Language"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Reset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textSize="@dimen/ts24"
+                android:gravity="center"
+                android:text="@string/Reset_Setting"
+                android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/tv_advanced_setting_beacon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textSize="@dimen/ts24"
+                android:text="@string/Beacon_mode"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_face_check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textSize="@dimen/ts24"
+                android:text="@string/Face_check"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_eco_mode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/ts24"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/ECO_mode"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Firmware_Version"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:textSize="@dimen/ts24"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Firmware_Version"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_advanced_setting_Factory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/level2_item_focused"
+                android:focusable="true"
+                android:textSize="@dimen/ts24"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="@string/Factory_Setting"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

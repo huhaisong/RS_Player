@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:alpha="0.5"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/volume_light_layout"
+        android:layout_width="@dimen/x1000"
+        android:layout_height="@dimen/y200"
+        android:background="@drawable/vol_bar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_volume_light_01_pop"
+            android:layout_width="@dimen/x182"
+            android:layout_height="@dimen/y181"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginRight="@dimen/x50"
+            android:background="@drawable/brightness_icon"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/iv_volume_light_02_pop"
+            android:layout_width="@dimen/x521"
+            android:layout_height="@dimen/y64"
+            android:scaleType="fitStart" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_volume_light_pop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x30"
+            android:text="15"
+            android:textColor="@color/yellow_volume"
+            android:textSize="@dimen/ts88" />
+    </LinearLayout>
+</LinearLayout>

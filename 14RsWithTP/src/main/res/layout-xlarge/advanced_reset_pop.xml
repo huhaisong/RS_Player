@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_advance_reset_hour"
+        android:layout_width="@dimen/x136"
+        android:layout_height="@dimen/y62"
+        android:background="@drawable/advanced_hour_focused"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_advance_reset_hour"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/ts24"
+            android:layout_height="wrap_content"
+            android:text="03"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/ts24"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:text="@string/hour"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:paddingRight="@dimen/x10"
+        android:id="@+id/tv_advanced_reset_switch"
+        android:layout_width="@dimen/x136"
+        android:layout_height="@dimen/y62"
+        android:background="@drawable/advanced_hour_focused"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textSize="@dimen/ts24"
+        android:gravity="center"
+        android:text="@string/off"
+        android:textColor="@color/white" />
+
+</LinearLayout>

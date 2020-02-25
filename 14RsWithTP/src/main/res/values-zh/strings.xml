@@ -1,0 +1,133 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MediaPlayerApk</string>
+
+    <string name="timer_setting">タイマー設定</string>
+    <string name="detail_setting">詳細設定</string>
+    <string name="video_preview">動画プレビュー</string>
+    <string name="Photo_Preview" tools:ignore="ExtraTranslation">静止画</string>
+    <string name="play_model">再生モード選択</string>
+    <string name="image_setting">静止画スライド</string>
+    <string name="quit">終了</string>
+
+    <string name="introduce_timer_setting" tools:ignore="ExtraTranslation">[タイマーの設定や変更]及び[曜日単位の休日設定や 変更]を行うことができます</string>
+    <string name="introduce_detail_setting" tools:ignore="ExtraTranslation">各種設定を行うことができます</string>
+    <string name="introduce_video_preview" tools:ignore="ExtraTranslation">すべてのビデオファイルをプレビューできます</string>
+    <string name="introduce_play_model" tools:ignore="ExtraTranslation">3種類の本体再生モードを選択することができます</string>
+    <string name="introduce_image_setting" tools:ignore="ExtraTranslation">BGMを再生しながら、静止画のスライドショーを行うことができます</string>
+    <string name="introduce_quit" tools:ignore="ExtraTranslation">設定画面を終了します</string>
+
+    <!--时间设置-->
+    <string name="time_setting_work_time">新規登録設定</string>
+    <string name="time_setting_holiday_time">休日設定</string>
+    <string name="time_setting_work_time_start">開始</string>
+    <string name="time_setting_work_time_end">終了</string>
+    <string name="Monday">月曜日</string>
+    <string name="Tuesday">火曜日</string>
+    <string name="Wednesday">水曜日</string>
+    <string name="Thursday">木曜日</string>
+    <string name="Friday">金曜日</string>
+    <string name="Saturday">土曜日</string>
+    <string name="Sunday">日曜日</string>
+    <string name="everyday">毎日</string>
+    <string name="ensure">登録</string>
+    <string name="delete">削除</string>
+    <string name="cancel">取り消し</string>
+    <string name="Holiday">休日</string>
+    <string name="introduce_time_setting_work_time" tools:ignore="ExtraTranslation">新規のタイマー設定を、曜日単位で行うことができます</string>
+    <string name="introduce_time_setting_holiday_time" tools:ignore="ExtraTranslation">休日設定を曜日単位で行うことができます</string>
+    <string name="introduce_time_setting_holiday_time_" tools:ignore="ExtraTranslation">登録設定の変更や削除を行うことができます</string>
+    <string name="introduce_time_setting_work_time_" tools:ignore="ExtraTranslation">登録設定の変更や削除を行うことができます</string>
+
+    <!--详细设置-->
+    <string name="Data_Setting">日付設定</string>
+    <string name="Time_Setting">時刻設定</string>
+    <string name="Display_Ratio_Setting">画面サイズ設定</string>
+    <string name="Language">言語設定</string>
+    <string name="Reset_Setting">リセット設定</string>
+    <string name="ECO_mode" tools:ignore="ExtraTranslation">ECO モード</string>
+    <string name="Face_check" tools:ignore="ExtraTranslation">人感センサー</string>
+    <string name="Beacon_mode" tools:ignore="ExtraTranslation">Beacon モード</string>
+    <string name="Firmware_Version">バージョン</string>
+    <string name="Factory_Setting">出荷時設定</string>
+
+    <string name="introduce_Data_Setting" tools:ignore="ExtraTranslation">現在日付を登録することができます</string>
+    <string name="introduce_Time_Setting" tools:ignore="ExtraTranslation">現在時刻を24時間モードで登録することができます</string>
+    <string name="introduce_Display_Ratio_Setting" tools:ignore="ExtraTranslation">画面サイズを、「オリジナル比率」または「全画面」に設定することができます</string>
+    <string name="introduce_Language" tools:ignore="ExtraTranslation">表示の言語を、「日本語」または「English」に設定することができます</string>
+    <string name="introduce_Reset_Setting" tools:ignore="ExtraTranslation">自動リブートの設定をします</string>
+    <string name="introduce_Face_check" tools:ignore="ExtraTranslation">人が近づくと特定のコンテンツを再生させることが できます</string>
+    <string name="introduce_ECO_mode" tools:ignore="ExtraTranslation">常時再生はせず、人が近づいた時のみ特定のコンテンツを再生します</string>
+    <string name="introduce_Beacon_mode" tools:ignore="ExtraTranslation">ビーコンを受信すると指定されたファイルが再生されます</string>
+    <string name="introduce_Firmware_Version" tools:ignore="ExtraTranslation">ファームウェアのバージョンを確認することができます</string>
+    <string name="introduce_Factory_Setting" tools:ignore="ExtraTranslation">工場出荷時の設定に戻ることができます</string>
+    <string name="introduce_Hdmi_Setting" tools:ignore="ExtraTranslation">解像度を切り替えることができます</string>
+
+    <string name="uniform">オリジナル比率</string>
+    <string name="full">全画面</string>
+    <string name="english">English</string>
+    <string name="chinese">日本語</string>
+
+    <string name="introduce_uniform" tools:ignore="ExtraTranslation">コンテンツの縦横比を維持して表示します</string>
+    <string name="introduce_full" tools:ignore="ExtraTranslation">画面全体に拡大して表示します</string>
+    <string name="introduce_english" tools:ignore="ExtraTranslation">表示の言語を、「日本語」または「English」に設定することができます</string>
+    <string name="introduce_chinese" tools:ignore="ExtraTranslation">表示の言語を、「日本語」または「English」に設定することができます</string>
+
+    <!--播放模式-->
+    <string name="play_back_mode_one_file">1ファイルリピート</string>
+    <string name="play_back_mode_all_file">全ファイルリピート</string>
+    <string name="play_back_mode_program">プログラム再生</string>
+    <string name="play_back_mode_Schedule" tools:ignore="ExtraTranslation">スケジュール再生</string>
+
+    <string name="introduce_play_back_mode_one_file" tools:ignore="ExtraTranslation">1つの動画ファイルを繰り返し再生することができます</string>
+    <string name="introduce_play_back_mode_all_file" tools:ignore="ExtraTranslation">すべての動画ファイルを繰り返し再生することが できます</string>
+    <string name="introduce_play_back_mode_program" tools:ignore="ExtraTranslation">最大50個のファイルの再生順番を指定して再生することができます</string>
+    <string name="introduce_play_back_mode_Schedule" tools:ignore="ExtraTranslation">複数ファイルの再生時間、日時、順番などを詳細に指定して再生することができます</string>
+
+    <!--图片设置-->
+    <string name="image_setting_direction_nomal">ノーマル</string>
+    <string name="image_setting_direction_random">ランダム</string>
+    <string name="image_setting_direction_up_to_down">上下</string>
+    <string name="image_setting_direction_left_to_right">左右</string>
+    <string name="image_setting_direction_horizontal_cross">水平クロス</string>
+    <string name="image_setting_slide_time_select">スライド時間選択</string>
+    <string name="image_setting_slide_pattern_select">スライドパターン選択</string>
+    <string name="image_setting_bgm">BGM</string>
+
+    <string name="introduce_image_setting_slide_time_select" tools:ignore="ExtraTranslation">スライドショーの表示間隔を選択することができます</string>
+    <string name="introduce_image_setting_slide_pattern_select" tools:ignore="ExtraTranslation">スライドパターンを選択することができます</string>
+    <string name="introduce_image_setting_bgm" tools:ignore="ExtraTranslation">最大10曲音楽ファイルかちBGMをプログラム再生することができます</string>
+
+    <!--usb设置-->
+    <string name="copy_dialog_content" tools:ignore="ExtraTranslation">USBコピーを開始いたしますよろしいですか？</string>
+    <string name="usb_copy_prepare" tools:ignore="ExtraTranslation"> is preparing copy！</string>
+    <string name="usb_copy_is_not_have_content" tools:ignore="ExtraTranslation">複製可能なファイルが見つかりません\nUSBメモリを再確認してください</string>
+    <string name="usb_copy_is_not_have_folder" tools:ignore="ExtraTranslation">複製可能なフォルダが見つかりません\nUSBメモリを再確認してください</string>
+    <string name="usb_copy_complete" tools:ignore="ExtraTranslation"> コピーが正常に終了いたしました\n USBメモリを抜いてください</string>
+
+    <string name="serial" tools:ignore="ExtraTranslation">SN</string>
+    <string name="update_apk" tools:ignore="ExtraTranslation">アプリケーションを更新しますか？</string>
+    <string name="impactTv" tools:ignore="ExtraTranslation">impactv</string>
+    <string name="event" tools:ignore="ExtraTranslation">event</string>
+    <string name="video" tools:ignore="ExtraTranslation">動画</string>
+    <string name="photo" tools:ignore="ExtraTranslation">静止画</string>
+    <string name="hour">hr</string>
+    <string name="off">off</string>
+    <string name="on">on</string>
+
+    <string name="face_off" tools:ignore="ExtraTranslation">オフ</string>
+    <string name="face_near" tools:ignore="ExtraTranslation">近接</string>
+    <string name="face_mid" tools:ignore="ExtraTranslation">中距離</string>
+
+    <string name="Program_Playback_List" tools:ignore="ExtraTranslation">プログラム再生リスト</string>
+
+    <string name="information_of_external_no_file" tools:ignore="ExtraTranslation">再生可能なファイルが見つかりませんSDカードを再確認してください</string>
+    <string name="information_of_internal_no_file" tools:ignore="ExtraTranslation">ファイルが見つかりません</string>
+    <string name="mediaplayer_onFileError" tools:ignore="ExtraTranslation">再生に失敗しました</string>
+    <string name="set_start_time" tools:ignore="ExtraTranslation">開始</string>
+    <string name="set_end_time" tools:ignore="ExtraTranslation">終了</string>
+    <string name="set_date" tools:ignore="ExtraTranslation">日付設定</string>
+    <string name="set_time" tools:ignore="ExtraTranslation">時刻設定</string>
+    <string name="set_reboot_hour" tools:ignore="ExtraTranslation">リセット設定</string>
+    <string name="hdmi_out_model" tools:ignore="ExtraTranslation">HDMI出力</string>
+
+</resources>

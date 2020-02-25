@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_photo_select"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.example.hu.mediaplayerapk.ui.activity.PhotoActivity">
+
+    <ImageView
+        android:id="@+id/imageView_select_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@drawable/file_list_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="@dimen/x501"
+            android:layout_height="@dimen/y48"
+            android:layout_marginLeft="@dimen/x50"
+            android:background="@drawable/file_top_22"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/x52"
+                android:layout_height="@dimen/y48"
+                android:layout_marginLeft="@dimen/x5"
+                android:src="@drawable/file_top_21_video" />
+
+            <TextView
+                android:id="@+id/tv_video_preview_directory_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/Photo_Preview"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/x510"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y25"
+            android:layout_marginLeft="@dimen/x46"
+            android:layout_marginTop="@dimen/y135"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_photo_item1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+
+            <TextView
+                android:id="@+id/tv_photo_item10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/file_list_item_on_focused"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/x510"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x46"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:padding="@dimen/x20"
+                android:id="@+id/ib_back"
+                android:layout_width="@dimen/x70"
+                android:layout_height="@dimen/y60"
+                android:background="@drawable/back_icon" />
+
+            <TextView
+                android:id="@+id/tv_photo_page"
+                android:layout_width="@dimen/x200"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y100"
+                android:layout_marginLeft="@dimen/x52"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts24" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/photo_choose_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/y100"
+        android:layout_marginRight="@dimen/x200"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="@dimen/x677"
+            android:layout_height="@dimen/y76"
+            android:layout_marginBottom="@dimen/y40"
+            android:background="@drawable/file_one_unsel_bg"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:text="@string/Program_Playback_List"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts24" />
+
+
+        <LinearLayout
+            android:layout_width="@dimen/x769"
+            android:layout_height="@dimen/y277"
+            android:background="@drawable/file_selected_list_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/file_selected_item_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y40"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_ensure"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/ensure"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_cancel"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selected_photo_delete"
+                    android:layout_width="@dimen/x119"
+                    android:layout_height="@dimen/y46"
+                    android:background="@drawable/file_selected_confirm_focused"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:text="@string/delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ts24" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
