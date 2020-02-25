@@ -88,5 +88,6 @@
 
         <service android:name=".service.WorkTimerService" />
         <service android:name=".service.BluetoothService" />
+        <service android:name=".service.MotionDetectorService" />
     </application>
 </manifest>

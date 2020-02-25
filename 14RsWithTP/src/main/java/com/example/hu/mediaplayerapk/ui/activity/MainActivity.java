@@ -152,11 +152,16 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.e(TAG, "onServiceConnected: " );
             motionDetectorService = ((MotionDetectorService.MotionDetectorServiceBinder) service).getMotionDetectorService();
+            if (motionDetectorService != null) {
+                motionDetectorService.startDetect();
+            }
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+            Log.e(TAG, "onServiceDisconnected: " );
             motionDetectorService = null;
         }
     }

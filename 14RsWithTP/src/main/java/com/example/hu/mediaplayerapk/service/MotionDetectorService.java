@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -31,9 +32,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
-import static org.opencv.samples.facedetect.FdActivity.JAVA_DETECTOR;
-import static org.opencv.samples.facedetect.FdActivity.NATIVE_DETECTOR;
 
 public class MotionDetectorService extends Service implements CameraBridgeViewBase.CvCameraViewListener2 {
 
@@ -122,8 +120,16 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
         return new MotionDetectorServiceBinder();
     }
 
+
     public void startDetect() {
+        Log.e(TAG, "startDetect: " );
         mOpenCvCameraView.enableView();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
+            }
+        }, 5000);
     }
 
     public void onCameraViewStarted(int width, int height) {
@@ -178,6 +184,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.e(TAG, "onDestroy: " );
         mOpenCvCameraView.disableView();
     }
 }
