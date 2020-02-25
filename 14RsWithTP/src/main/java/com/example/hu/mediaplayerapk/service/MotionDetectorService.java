@@ -41,12 +41,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
     @Override
     public void onCreate() {
         super.onCreate();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                init();
-            }
-        }).start();
+        init();
     }
 
     private Mat mRgba;
