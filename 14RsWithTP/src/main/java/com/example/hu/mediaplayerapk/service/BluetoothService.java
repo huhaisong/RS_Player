@@ -193,15 +193,15 @@ public class BluetoothService extends Service {
                                 break;
                             case BeaconTag.BEACON_IRSENSOR:
                                 Log.i(TAG, "\n\n\nsensor detected\n\n\n");
-                                if ((scanRecord[11] == 0) && (curDev.getBeaconData() == 4)) {//4---->0  有人
+                                if ((scanRecord[11] == 0) && (curDev.getBeaconData() == 4)) {//4---->0
                                     Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
-                                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_PERSION);
+                                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_NO_PERSION);
                                     sendBroadcast(intent2);
                                     Log.i(TAG, " 4---->0 ");
                                     //stopScan();//继续scan
-                                } else if ((scanRecord[11] == 4) && (curDev.getBeaconData() == 0)) {//0---->4
+                                } else if ((scanRecord[11] == 4) && (curDev.getBeaconData() == 0)) {//0---->4 有人
                                     Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
-                                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_NO_PERSION);
+                                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_PERSION);
                                     Log.i(TAG, " 0---->4 ");
                                     sendBroadcast(intent2);
                                 }
