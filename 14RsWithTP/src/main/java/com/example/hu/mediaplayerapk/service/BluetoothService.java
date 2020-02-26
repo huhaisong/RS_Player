@@ -193,7 +193,7 @@ public class BluetoothService extends Service {
                                 break;
                             case BeaconTag.BEACON_IRSENSOR:
                                 Log.i(TAG, "\n\n\nsensor detected\n\n\n");
-                                if (curDev.getBeaconData() == 4) {//4---->0
+                                if ((scanRecord[11] == 0) && (curDev.getBeaconData() == 4)) {//4---->0
                                     Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
                                     intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_NO_PERSION);
                                     sendBroadcast(intent2);

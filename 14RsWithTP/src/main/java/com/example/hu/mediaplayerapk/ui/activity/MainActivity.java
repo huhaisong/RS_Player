@@ -436,12 +436,15 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         public void onReceive(Context context, Intent intent) {
             int intentNo = intent.getIntExtra(BLUETOOTH_INT_EXTRA_NAME, -1);
             Log.e(TAG, "onReceive --------------1 onReceive: intentNo = " + intentNo + ",isPlayingBeaconEvent = " + isPlayingBeaconEvent);
-            if (System.currentTimeMillis() - oldTime <= 2 * 1000) {
+           /* if (System.currentTimeMillis() - oldTime <= 2 * 1000) {
                 Log.e(TAG, "onReceive: time is too close");
                 return;
-            }
+            }*/
             if (isPlayingBeaconEvent) {//如果正在播放beacon，检测到另外的beacon设备在5之内不播放新的beacon。
                 if (intentNo == Config.BEACON_TAG_NO_PERSION || (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION)) {//没人
+                    if (beaconTagNo == Config.BEACON_TAG_NO_PERSION &&intentNo == Config.BEACON_TAG_NO_PERSION ){
+                        return;
+                    }
                     oldTime = System.currentTimeMillis();
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
