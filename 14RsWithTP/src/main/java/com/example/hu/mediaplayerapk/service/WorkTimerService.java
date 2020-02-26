@@ -234,6 +234,8 @@ public class WorkTimerService extends Service {
                 return;
             }
         }
+
+
         //if (isMotionDetector) {
         getScheduleState();
         //}
