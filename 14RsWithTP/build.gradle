@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion = 28
+    compileSdkVersion = 29
     buildToolsVersion = "28.0.3"
 
     defaultConfig {
         applicationId "com.example.hu.mediaplayerapk"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 29
         versionCode 40
         versionName "V.14RS.1.04.0"  //如果以basic命名则版本号要加20  V.Basic.1.02.3
 
