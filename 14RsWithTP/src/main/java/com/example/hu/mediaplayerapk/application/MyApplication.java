@@ -76,7 +76,15 @@ public class MyApplication extends Application {
         initFilePath();
         existExternalSDCard = FileUtils.getSize(Config.EXTERNAL_FILE_ROOT_PATH) > 0;
         FileUtils.CheckAndCreatePlayLogfile(FileUtils.getLogPath()); //创建playlog file
-        FileUtils.deleteMoreOneMonthImage();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                FileUtils.deleteMoreOneMonthImage(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                        + Config.PICKTURE_OK_FOLDER);
+                FileUtils.deleteMoreOneMonthImage(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                        + Config.PICKTURE_NG_FOLDER);
+            }
+        }).start();
     }
 
     // 创建服务用于捕获崩溃异常

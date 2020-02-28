@@ -82,7 +82,9 @@ public class USBCopyActivity extends BaseActivity {
         if (FileUtils.checkHaveFile(usb_warning_path)
                 || FileUtils.checkHaveFile(usb_impacttv_path)
                 || FileUtils.checkHaveFile(usb_impactv_path)
-                || FileUtils.checkHaveFile(usb_washing_path)) {//是否有相关文件
+                || FileUtils.checkHaveFile(usb_washing_path)
+                || FileUtils.checkDirExist(Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC")
+        ) {//是否有相关文件
             chooseDialog = new ChooseDialog(this, getString(R.string.copy_dialog_content));
             ChooseDialog.ClickListenerInterface listen = new ChooseDialog.ClickListenerInterface() {
                 @Override

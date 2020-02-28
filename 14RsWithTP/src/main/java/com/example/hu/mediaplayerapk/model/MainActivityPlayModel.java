@@ -544,6 +544,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
             }
             if (isPlayingBeaconEvent) {
                 isPlayingBeaconEvent = false;
+                FileUtils.removePhotoToTarget(beaconTagNo);
                 Log.e(TAG, "currentNum >= selectedFileList.size() --------------startPlay()" + startPlay());
                 return;
             }

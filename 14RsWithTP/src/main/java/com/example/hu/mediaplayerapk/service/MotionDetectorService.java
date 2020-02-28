@@ -38,6 +38,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
     private static final String TAG = "MotionDetectorService";
     private JavaCameraView mOpenCvCameraView;
     private int mAbsoluteFaceSize = 0;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -117,12 +118,14 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
 
 
     public void startDetect() {
-        Log.e(TAG, "startDetect: " );
+        Log.e(TAG, "startDetect: ");
         mOpenCvCameraView.enableView();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
+                mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                        + Config.PICKTURE_TEMP_FOLDER + File.separator
+                        + TimeUtil.getCurrentFormatTime() + ".jpg");
             }
         }, 5000);
     }
@@ -161,9 +164,11 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
         }
         if (faceSerialCount > 5) {
 //            Log.e(TAG, "onCameraFrame: " + Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "OUTPUT" + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
-            Log.e(TAG, "onCameraFrame: " + Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
+            Log.e(TAG, "onCameraFrame: " + Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_TEMP_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
 //            mOpenCvCameraView.takePhoto(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "OUTPUT" + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
-            mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
+            mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                    + Config.PICKTURE_TEMP_FOLDER + File.separator
+                    + TimeUtil.getCurrentFormatTime() + ".jpg");
             faceSerialCount = -5000;
             Log.i("takephoto", "takephoto1");
         }
@@ -179,7 +184,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.e(TAG, "onDestroy: " );
+        Log.e(TAG, "onDestroy: ");
         mOpenCvCameraView.disableView();
     }
 }

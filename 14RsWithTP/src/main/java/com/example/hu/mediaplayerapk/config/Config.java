@@ -93,5 +93,7 @@ public class Config {
     public static final int BEACON_TAG_NO_PERSION = 4;  //4代表没人
     public static final int BEACON_TAG_PERSION = 0;  //0代表有人
 
-    public static final String PICKTURE_FOLDER = "OUTPUT";
+    public static final String PICKTURE_OK_FOLDER = "OUTPUT_OK";
+    public static final String PICKTURE_NG_FOLDER = "OUTPUT_NG";
+    public static final String PICKTURE_TEMP_FOLDER = "OUTPUT_TEMP";
 }

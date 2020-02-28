@@ -70,6 +70,27 @@ public class FileUtils {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ITVlog";
     }
 
+    public static void removePhotoToTarget(int beaconTagNo) {
+        String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                + Config.PICKTURE_TEMP_FOLDER;
+        if (!checkHaveFile(parentPath))
+            return;
+        File parentFile = new File(parentPath);
+        File[] filels = parentFile.listFiles();
+        String path = "";
+        if (beaconTagNo == Config.BEACON_TAG_PERSION) {
+            path = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                    + Config.PICKTURE_OK_FOLDER + File.separator + filels[0].getName();
+            copyFile(filels[0], new File(path), true);
+        } else if (beaconTagNo == Config.BEACON_TAG_NO_PERSION) {
+            path = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                    + Config.PICKTURE_NG_FOLDER + File.separator + "NG" + filels[0].getName();
+            copyFile(filels[0], new File(path), true);
+        }
+        deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                + Config.PICKTURE_TEMP_FOLDER);
+    }
+
     /**
      * @param path 文件地址
      * @return 文件是否有内容
@@ -968,39 +989,34 @@ public class FileUtils {
     }
 
 
-    public static void deleteMoreOneMonthImage() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                String filePath = Config.INTERNAL_FILE_ROOT_PATH + File.separator + "OUTPUT";
-                if (!filePath.endsWith(File.separator)) {
-                    filePath = filePath + File.separator;
-                }
-                File dirFile = new File(filePath);
-                if (!dirFile.exists() || !dirFile.isDirectory()) {
-                    return;
-                }
-                File[] files = dirFile.listFiles();
-                if (files == null)
-                    return;
-                if (files.length <= 0)
-                    return;
-                for (int i = 0; i < files.length; i++) {
-                    if (files[i].isFile()) {
-                        String itemFilePath = files[i].getName();
-                        if (itemFilePath.contains(".jpg")) {
-                            long time = TimeUtil.getStringToDate(itemFilePath.replaceAll(".jpg", ""));
-                            if (Math.abs(time - System.currentTimeMillis()) / 1000 > (30 * 24 * 60 * 60)) {
-                                deleteFile(files[i].getAbsolutePath());
-                            }
-                        } else {
-                            deleteFile(files[i].getAbsolutePath());
-                        }
-                    } else {
-                        deleteDirectory(files[i].getAbsolutePath());
+    public static void deleteMoreOneMonthImage(String filePath) {
+        if (!filePath.endsWith(File.separator)) {
+            filePath = filePath + File.separator;
+        }
+        File dirFile = new File(filePath);
+        if (!dirFile.exists() || !dirFile.isDirectory()) {
+            return;
+        }
+        File[] files = dirFile.listFiles();
+        if (files == null)
+            return;
+        if (files.length <= 0)
+            return;
+        for (int i = 0; i < files.length; i++) {
+            if (files[i].isFile()) {
+                String itemFilePath = files[i].getName();
+                itemFilePath.replaceAll("NG", "");
+                if (itemFilePath.contains(".jpg")) {
+                    long time = TimeUtil.getStringToDate(itemFilePath.replaceAll(".jpg", ""));
+                    if (Math.abs(time - System.currentTimeMillis()) / 1000 > (30 * 24 * 60 * 60)) {
+                        deleteFile(files[i].getAbsolutePath());
                     }
+                } else {
+                    deleteFile(files[i].getAbsolutePath());
                 }
+            } else {
+                deleteDirectory(files[i].getAbsolutePath());
             }
-        }).start();
+        }
     }
 }

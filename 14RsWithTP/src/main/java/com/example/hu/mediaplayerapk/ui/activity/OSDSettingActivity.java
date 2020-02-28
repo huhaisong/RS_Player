@@ -163,10 +163,10 @@ public class OSDSettingActivity extends BaseActivity implements View.OnFocusChan
                 advancedSettingPop.showAdvancedSettingPop(v);
                 break;
             case R.id.image_setting_layout:
-                Intent intent1 = new Intent(this, FdActivity.class);
-                startActivity(intent1);
-//                mImageSettingPop = new ImageSettingPop(this, mHandler);
-//                mImageSettingPop.imageSettingPop(v);
+//                Intent intent1 = new Intent(this, FdActivity.class);
+//                startActivity(intent1);
+                mImageSettingPop = new ImageSettingPop(this, mHandler);
+                mImageSettingPop.imageSettingPop(v);
                 break;
             case R.id.quit_layout:
                 onBackPressed();
