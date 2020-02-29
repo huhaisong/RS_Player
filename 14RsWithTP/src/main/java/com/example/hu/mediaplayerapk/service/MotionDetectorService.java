@@ -124,10 +124,10 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
 
     public void startDetect() {
         Log.e(TAG, "startDetect: ");
-        mOpenCvCameraView.enableView();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                mOpenCvCameraView.enableView();
                 mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER + File.separator
                         + TimeUtil.getCurrentFormatTime() + ".jpg");
