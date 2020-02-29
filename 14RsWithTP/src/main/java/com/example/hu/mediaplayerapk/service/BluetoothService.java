@@ -83,7 +83,8 @@ public class BluetoothService extends Service {
         super.onCreate();
         initialize();
         enableBluetooth();
-        beacon.setBeaconData(-1);
+        if (beacon != null)
+            beacon.setBeaconData(-1);
         IntentFilter filter = new IntentFilter();
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         filter.addAction(SCAN_BLE);
