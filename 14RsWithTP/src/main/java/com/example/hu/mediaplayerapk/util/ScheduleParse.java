@@ -163,6 +163,8 @@ public class ScheduleParse {
         String serialNumber = getSerialNumber();
         Log.e(TAG, "parse_BEACON_NO_TXT: serialNumber = " + serialNumber);
 
+
+
         for (int i = 0; i < strings.length; i++) {
             String[] stringsItem = strings[i].split(",");
             if (stringsItem.length >= 2) {
@@ -171,8 +173,9 @@ public class ScheduleParse {
                 Log.e(TAG, "parse_BEACON_NO_TXT: serialNumber.equals(stringsItem[0])= " + serialNumber.equals(stringsItem[0]));
                 if (serialNumber.equals(stringsItem[0])) {
                     tempString = stringsItem[1].replaceAll("/n", "");
+                    tempString = tempString.replaceAll("-", ":");
                     BeaconTag beaconTag = new BeaconTag();
-                    beaconTag.setBeaconNo(Integer.valueOf(tempString));
+                    beaconTag.setBeaconAddr(tempString);
                     return beaconTag;
                 }
             }

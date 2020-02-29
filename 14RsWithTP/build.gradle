@@ -28,10 +28,9 @@ android {
     }
 
     applicationVariants.all { variant ->
-        def buildType = variant.buildType.name
         def createTime = new Date().format("YYYYMMdd_HHmm", TimeZone.getTimeZone("GMT+08:00"))
         variant.outputs.all {
-            outputFileName = createTime + "_" + buildType + ".apk"
+            outputFileName = createTime + ".apk"
         }
     }
 
