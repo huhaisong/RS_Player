@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -65,7 +66,6 @@ public class ScheduleParse {
             e.printStackTrace();
         }
     }
-
 
     public static String readTXT(String path) {
         File file = new File(path);
@@ -157,38 +157,28 @@ public class ScheduleParse {
         return scheduleBeanArrayList;
     }
 
-    public static ArrayList<BeaconTag> parse_BEACON_NO_TXT(String path) {
-        BeaconTag beaconTag = new BeaconTag();
-        ArrayList<BeaconTag> beaconTags = new ArrayList<>();
+    public static BeaconTag parse_BEACON_NO_TXT(String path) {
         String string = readTXT(path);
-        System.out.println("111111111111111111111"+string);
-        String[] strings = string.split("\\[");
+        String[] strings = string.split("/n");
+        String serialNumber = getSerialNumber();
+        Log.e(TAG, "parse_BEACON_NO_TXT: serialNumber = " + serialNumber);
+
         for (int i = 0; i < strings.length; i++) {
-            String[] stringsItem = strings[i].split("\\]");
+            String[] stringsItem = strings[i].split(",");
             if (stringsItem.length >= 2) {
                 String tempString;
-                switch (stringsItem[0]) {
-                    case BEACONNO:
-                        tempString = stringsItem[1].replaceAll("/n", "");
-                        beaconTag.setBeaconNo(Integer.valueOf(tempString));
-                        break;
-                    case BEACONADDR:
-                        tempString = stringsItem[1].replaceAll("/n", "");
-                        tempString = tempString.replaceAll("-", ":");
-                        beaconTag.setBeaconAddr(tempString);
-                        break;
-                    case BEACONTYPE:
-                        tempString = stringsItem[1].replaceAll("/n", "");
-                        beaconTag.setBeaconType(tempString);
-                        beaconTags.add(beaconTag);
-                        beaconTag = new BeaconTag();
-                        break;
+                Log.e(TAG, "parse_BEACON_NO_TXT: stringsItem[0] = " + stringsItem[0]);
+                Log.e(TAG, "parse_BEACON_NO_TXT: serialNumber.equals(stringsItem[0])= " + serialNumber.equals(stringsItem[0]));
+                if (serialNumber.equals(stringsItem[0])) {
+                    tempString = stringsItem[1].replaceAll("/n", "");
+                    BeaconTag beaconTag = new BeaconTag();
+                    beaconTag.setBeaconNo(Integer.valueOf(tempString));
+                    return beaconTag;
                 }
             }
         }
-        return beaconTags;
+        return null;
     }
-
 
     public static ArrayList<BeaconBean> parse_BEACON_Schedule_TXT(String path) {
         ArrayList<BeaconBean> beaconBeans = new ArrayList<>();
@@ -210,5 +200,18 @@ public class ScheduleParse {
             Log.e(TAG, "parse_BEACON_Schedule_TXT: " + item.toString());
         }
         return beaconBeans;
+    }
+
+
+    public static String getSerialNumber() {
+        String serial = null;
+        try {
+            Class<?> c = Class.forName("android.os.SystemProperties");
+            Method get = c.getMethod("get", String.class);
+            serial = (String) get.invoke(c, "ro.serialno");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return serial;
     }
 }

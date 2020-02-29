@@ -43,11 +43,7 @@ public class BluetoothService extends Service {
 
     private BluetoothAdapter mBluetoothAdapter;
     private BluetoothGatt mBluetoothGatt;
-    private ArrayList<BeaconTag> BeaconList = null;  //记录本beacon文件夹内所有有关的beacon设备及其状态
-
-    public void BeaconListClear() {
-        BeaconList = null;
-    }
+    private BeaconTag beacon = null;  //记录本beacon文件夹内所有有关的beacon设备及其状态
 
     public boolean initialize() {
         initializeBeaconDevice();
@@ -57,26 +53,17 @@ public class BluetoothService extends Service {
     }
 
     private void initializeBeaconDevice() {
-        BeaconListClear();
+        beacon = null;
 
         if (FileUtils.getSize(Config.EXTERNAL_FILE_ROOT_PATH) > 0)
-            BeaconList = ScheduleParse.parse_BEACON_NO_TXT(MyApplication.external_beacon_path + File.separator + Config.BEACON_DEVICE_FILE_NAME);
+            beacon = ScheduleParse.parse_BEACON_NO_TXT(MyApplication.external_beacon_path + File.separator + Config.BEACON_DEVICE_FILE_NAME);
         else
-            BeaconList = ScheduleParse.parse_BEACON_NO_TXT(MyApplication.internal_beacon_path + File.separator + Config.BEACON_DEVICE_FILE_NAME);
+            beacon = ScheduleParse.parse_BEACON_NO_TXT(MyApplication.internal_beacon_path + File.separator + Config.BEACON_DEVICE_FILE_NAME);
 
-        if (BeaconList.size() > 0) {
-            Log.e(TAG, "initializeBeaconDevice: 解析的数据大小：" + BeaconList.size());
-        } else {
-            Log.e(TAG, "initializeBeaconDevice: 没解析成功");
-        }
-
-        for (int i = 0; i < BeaconList.size(); i++) {
-            Log.e(TAG, "initializeBeaconDevice: " + BeaconList.get(i).toString());
-            if (i >= 1) {
-                BeaconList.remove(i);
-            }
-        }
-
+        if (beacon == null)
+            Log.e(TAG, "initializeBeaconDevice: beacon == null");
+        else
+            Log.e(TAG, "initializeBeaconDevice: beacon = " + beacon.toString());
     }
 
     //如果设备支持BLE，那么就可以获取蓝牙适配器。
@@ -96,18 +83,7 @@ public class BluetoothService extends Service {
         super.onCreate();
         initialize();
         enableBluetooth();
-
-        for (BeaconTag curDev : BeaconList) {
-            if (curDev != null) {
-                if (curDev.getBeaconType() == BeaconTag.BEACON_GSENSOR) {
-                    curDev.setBeaconData(0);
-                } else //另外两种都是初始化为-1
-                {
-                    curDev.setBeaconData(-1);
-                }
-            }
-        }
-
+        beacon.setBeaconData(-1);
         IntentFilter filter = new IntentFilter();
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         filter.addAction(SCAN_BLE);
@@ -161,58 +137,24 @@ public class BluetoothService extends Service {
 
         public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
             Log.e(TAG, "onLeScan: device = " + device.getAddress());
-            if (BeaconList == null || BeaconList.size() == 0)
+            if (beacon == null)
                 return;
-            for (BeaconTag curDev : BeaconList) {
-                if (curDev != null) {
-                    if (device.getAddress().equalsIgnoreCase(curDev.getBeaconAddr())) {
-                        //找到该设备了;
-                        Log.e(TAG, "onLeScan: curDev = " + curDev.getBeaconAddr());
-                        Log.e(TAG, "Found:address:" + device.getAddress() + "     scanRecord:" + Arrays.toString(scanRecord));
-                        Log.e(TAG, "     curDev:" + curDev.toString());
-                        switch (curDev.getBeaconType()) {
-                            case BeaconTag.BEACON_MAGNET://magnet，捕捉4到0的动作
-                                if ((scanRecord[11] == 0) && (curDev.getBeaconData() == 4)) {
-                                    Intent intent = new Intent(BLUETOOTH_BROADCAST_NAME);
-                                    intent.putExtra(BLUETOOTH_INT_EXTRA_NAME, curDev.getBeaconNo());
-                                    sendBroadcast(intent);
-                                    Log.i(TAG, "\n\n\nMagnet detected\n\n\n");
-                                    //stopScan();//继续scan
-                                }
-                                curDev.setBeaconData(scanRecord[11]);
-                                break;
-                            case BeaconTag.BEACON_GSENSOR: //gsensor:捕捉0->2的动作
-                                if ((scanRecord[11] == 2) && (curDev.getBeaconData() == 0)) {
-                                    Intent intent1 = new Intent(BLUETOOTH_BROADCAST_NAME);
-                                    intent1.putExtra(BLUETOOTH_INT_EXTRA_NAME, curDev.getBeaconNo());
-                                    sendBroadcast(intent1);
-                                    Log.i(TAG, "\n\n\nGsensor detected\n\n\n");
-                                    //stopScan();//继续scan
-                                }
-                                curDev.setBeaconData(scanRecord[11]);
-                                break;
-                            case BeaconTag.BEACON_IRSENSOR:
-                                Log.i(TAG, "\n\n\nsensor detected\n\n\n");
-                                if ((scanRecord[11] == 0) && (curDev.getBeaconData() == 4)) {//4---->0
-                                    Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
-                                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_NO_PERSION);
-                                    sendBroadcast(intent2);
-                                    Log.i(TAG, " 4---->0 ");
-                                    //stopScan();//继续scan
-                                } else if ((scanRecord[11] == 4) && (curDev.getBeaconData() == 0)) {//0---->4 有人
-                                    Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
-                                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_PERSION);
-                                    Log.i(TAG, " 0---->4 ");
-                                    sendBroadcast(intent2);
-                                }
-                                curDev.setBeaconData(scanRecord[11]);
-                                break;
-                            default:
-                                break;
-                        }
-//                            break;//找到地址一样的就可以break了
-                    }
+            if (device.getAddress().equalsIgnoreCase(beacon.getBeaconAddr())) {
+                //找到该设备了;
+                Log.e(TAG, "     curDev:" + beacon.toString());
+                if ((scanRecord[11] == 0) && (beacon.getBeaconData() == 4)) {//4---->0
+                    Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
+                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_NO_PERSION);
+                    sendBroadcast(intent2);
+                    Log.i(TAG, " 4---->0 ");
+                    //stopScan();//继续scan
+                } else if ((scanRecord[11] == 4) && (beacon.getBeaconData() == 0)) {//0---->4 有人
+                    Intent intent2 = new Intent(BLUETOOTH_BROADCAST_NAME);
+                    intent2.putExtra(BLUETOOTH_INT_EXTRA_NAME, Config.BEACON_TAG_PERSION);
+                    Log.i(TAG, " 0---->4 ");
+                    sendBroadcast(intent2);
                 }
+                beacon.setBeaconData(scanRecord[11]);
             }
         }
     };

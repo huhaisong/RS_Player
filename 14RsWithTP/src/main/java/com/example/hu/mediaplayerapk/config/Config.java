@@ -59,7 +59,7 @@ public class Config {
     public static final String IMPACTV_BGM_FILE_LIST_FILE_NAME = "impactv_bgm_list.txt";
     public static final String EVENT_BGM_FILE_LIST_FILE_NAME = "event_bgm_list.txt";
     public static final String SCHEDULE_FILE_NAME = "ImpacTV.txt";
-    public static final String BEACON_DEVICE_FILE_NAME = "beaconList.txt";
+    public static final String BEACON_DEVICE_FILE_NAME = "beaconList.csv";
     public static final String BEACON_SCHEDULE_FILE_NAME = "beaconSchedule.txt";
     public static final String USB_STORAGE_IMPACTTV_FILE_NAME_INVARIANT = "impacttv14";
     public static final String USB_STORAGE_IMPACTV_FILE_NAME_INVARIANT = "impactv14";
