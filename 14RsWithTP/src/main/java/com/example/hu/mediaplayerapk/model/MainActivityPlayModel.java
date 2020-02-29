@@ -45,7 +45,6 @@ import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.example.hu.mediaplayerapk.util.ScheduleParse;
 import com.example.hu.mediaplayerapk.util.TimeUtil;
-import com.example.hu.mediaplayerapk.util.VideosHelper;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -76,12 +75,10 @@ import static com.example.hu.mediaplayerapk.util.FileUtils.isPhoto;
 import static com.example.hu.mediaplayerapk.util.FileUtils.isVideo;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getExternalEventFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getExternalImpactvFileList;
-import static com.example.hu.mediaplayerapk.util.VideosHelper.getExternalStandFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getExternalWarningFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getExternalWashingFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getInternalEventFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getInternalImpactvFileList;
-import static com.example.hu.mediaplayerapk.util.VideosHelper.getInternalStandFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getInternalWarningFileList;
 import static com.example.hu.mediaplayerapk.util.VideosHelper.getInternalWashingFileList;
 
@@ -544,7 +541,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
             }
             if (isPlayingBeaconEvent) {
                 isPlayingBeaconEvent = false;
-                FileUtils.removePhotoToTarget(beaconTagNo);
+                FileUtils.movePhotoToTarget(beaconTagNo);
                 Log.e(TAG, "currentNum >= selectedFileList.size() --------------startPlay()" + startPlay());
                 return;
             }
@@ -620,6 +617,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
 //        if (!checkBeaconAct())
 //            return;
         isPlayingBeaconEvent = true;
+        FileUtils.movePhotoToTarget(beaconTagNo);
         isEVENT = false;
         Log.e(TAG, "Beacon Play---------- " + startPlay());
     }
@@ -1044,6 +1042,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
             }
             sdCardBroadCast = null;
         }
+        FileUtils.movePhotoToTarget(beaconTagNo);
     }
 
     public void onResume() {

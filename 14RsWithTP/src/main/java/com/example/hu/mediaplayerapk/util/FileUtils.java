@@ -70,25 +70,30 @@ public class FileUtils {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ITVlog";
     }
 
-    public static void removePhotoToTarget(int beaconTagNo) {
-        String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
-                + Config.PICKTURE_TEMP_FOLDER;
-        if (!checkHaveFile(parentPath))
-            return;
-        File parentFile = new File(parentPath);
-        File[] filels = parentFile.listFiles();
-        String path = "";
-        if (beaconTagNo == Config.BEACON_TAG_PERSION) {
-            path = Config.INTERNAL_FILE_ROOT_PATH + File.separator
-                    + Config.PICKTURE_OK_FOLDER + File.separator + filels[0].getName();
-            copyFile(filels[0], new File(path), true);
-        } else if (beaconTagNo == Config.BEACON_TAG_NO_PERSION) {
-            path = Config.INTERNAL_FILE_ROOT_PATH + File.separator
-                    + Config.PICKTURE_NG_FOLDER + File.separator + "NG" + filels[0].getName();
-            copyFile(filels[0], new File(path), true);
-        }
-        deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
-                + Config.PICKTURE_TEMP_FOLDER);
+    public static void movePhotoToTarget(final int beaconTagNo) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                        + Config.PICKTURE_TEMP_FOLDER;
+                if (!checkHaveFile(parentPath))
+                    return;
+                File parentFile = new File(parentPath);
+                File[] filels = parentFile.listFiles();
+                String path = "";
+                if (beaconTagNo == Config.BEACON_TAG_PERSION) {
+                    path = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                            + Config.PICKTURE_OK_FOLDER + File.separator + filels[0].getName();
+                    copyFile(filels[0], new File(path), true);
+                } else if (beaconTagNo == Config.BEACON_TAG_NO_PERSION) {
+                    path = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                            + Config.PICKTURE_NG_FOLDER + File.separator + "NG" + filels[0].getName();
+                    copyFile(filels[0], new File(path), true);
+                }
+                deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                        + Config.PICKTURE_TEMP_FOLDER);
+            }
+        }).start();
     }
 
     /**
