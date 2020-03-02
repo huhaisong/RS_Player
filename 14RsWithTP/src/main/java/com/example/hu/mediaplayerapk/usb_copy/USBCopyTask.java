@@ -111,8 +111,10 @@ public class USBCopyTask extends AsyncTask<Void, String, Void> {
         if (FileUtils.checkDirExist(Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC")) {
             copyFolder(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_OK_FOLDER,
                     Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC" + File.separator + Config.PICKTURE_OK_FOLDER);
+            FileUtils.deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_OK_FOLDER);
             copyFolder(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_NG_FOLDER,
                     Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC" + File.separator + Config.PICKTURE_NG_FOLDER);
+            FileUtils.deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_NG_FOLDER);
         }
         return null;
     }

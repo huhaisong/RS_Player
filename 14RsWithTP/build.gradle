@@ -28,7 +28,7 @@ android {
     }
 
     applicationVariants.all { variant ->
-        def createTime = new Date().format("YYYYMMdd_HHmm", TimeZone.getTimeZone("GMT+08:00"))
+        def createTime = new Date().format("YYYYMMddHHmm", TimeZone.getTimeZone("GMT+08:00"))
         variant.outputs.all {
             outputFileName = createTime + ".apk"
         }
