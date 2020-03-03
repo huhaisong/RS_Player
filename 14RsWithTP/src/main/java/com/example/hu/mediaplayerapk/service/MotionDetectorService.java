@@ -124,10 +124,15 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
 
     public void startDetect() {
         Log.e(TAG, "startDetect: ");
-        new Handler().postDelayed(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 mOpenCvCameraView.enableView();
+            }
+        }).start();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER + File.separator
                         + TimeUtil.getCurrentFormatTime() + ".jpg");
@@ -156,8 +161,6 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
             mNativeDetector.setMinFaceSize(mAbsoluteFaceSize);
         }
         MatOfRect faces = new MatOfRect();
-
-
         if (mNativeDetector != null)
             mNativeDetector.detect(mGray, faces);
         Rect[] facesArray = faces.toArray();
@@ -168,9 +171,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
             faceSerialCount = 0;
         }
         if (faceSerialCount > 5) {
-//            Log.e(TAG, "onCameraFrame: " + Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + "OUTPUT" + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
             Log.e(TAG, "onCameraFrame: " + Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_TEMP_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
-//            mOpenCvCameraView.takePhoto(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "OUTPUT" + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
             mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                     + Config.PICKTURE_TEMP_FOLDER + File.separator
                     + TimeUtil.getCurrentFormatTime() + ".jpg");
