@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -23,8 +24,6 @@ import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Rect;
-import org.opencv.core.Size;
-import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.samples.facedetect.DetectionBasedTracker;
 
@@ -127,7 +126,9 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Looper.prepare();
                 mOpenCvCameraView.enableView();
+                Looper.loop();
             }
         }).start();
         new Handler().postDelayed(new Runnable() {
