@@ -81,10 +81,10 @@ public class Config {
     public static String INTERNAL_FILE_ROOT_PATH = INTERNAL_FILE_PATH;
     public static final String IMPACTV_FILE_NAME = "impactv";
     public static final String IMPACTTV_FILE_NAME = "impacttv";
-    public static final String WASHING_FILE_NAME = "WASHING";
-    public static final String WARNING_FILE_NAME = "WARNING";
+    public static final String WASHING_FILE_NAME = "WASHING10";
+    public static final String WARNING_FILE_NAME = "WARNING10";
+    public static final String BEACON_FILE_NAME = "Beacons10";
     public static final String EVENT_FILE_NAME = "Event";
-    public static final String BEACON_FILE_NAME = "Beacons";
     public static final String SYSTEM_FILE_NAME = "System";
 
     public static final String APK_PACKAGE_NAME = "com.example.hu.mediaplayerapk";
