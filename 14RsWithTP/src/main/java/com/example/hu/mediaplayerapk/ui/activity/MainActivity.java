@@ -33,6 +33,7 @@ import com.example.hu.mediaplayerapk.service.MotionDetectorService;
 import com.example.hu.mediaplayerapk.service.WorkTimerService;
 import com.example.hu.mediaplayerapk.ui.popupWindow.VolumeAndLightPop;
 import com.example.hu.mediaplayerapk.usb_copy.USBReceive;
+import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.rockchip.Gpio;
 
@@ -152,7 +153,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            Log.e(TAG, "onServiceConnected: " );
+            Log.e(TAG, "onServiceConnected: ");
             motionDetectorService = ((MotionDetectorService.MotionDetectorServiceBinder) service).getMotionDetectorService();
             if (motionDetectorService != null) {
                 motionDetectorService.startDetect();
@@ -161,7 +162,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            Log.e(TAG, "onServiceDisconnected: " );
+            Log.e(TAG, "onServiceDisconnected: ");
             motionDetectorService = null;
         }
     }
@@ -441,9 +442,17 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                 return;
             }*/
             if (isPlayingBeaconEvent) {//如果正在播放beacon，检测到另外的beacon设备在5之内不播放新的beacon。
-                if (intentNo == Config.BEACON_TAG_NO_PERSION || (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION)) {//没人
-                    if (beaconTagNo == Config.BEACON_TAG_NO_PERSION &&intentNo == Config.BEACON_TAG_NO_PERSION ){
+                if (intentNo == Config.BEACON_TAG_NO_PERSION) {//没人
+                    if (beaconTagNo == Config.BEACON_TAG_NO_PERSION && intentNo == Config.BEACON_TAG_NO_PERSION) {  //原来没人，现在再次没人
                         return;
+                    }
+                    oldTime = System.currentTimeMillis();
+                    beaconTagNo = intentNo;
+                    mainActivityPlayModel.startPlayBeacon();
+                } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来播放没人，现在又有人了
+                    FileUtils.movePhotoToTarget(beaconTagNo);
+                    if (motionDetectorService != null) {
+                        motionDetectorService.startDetect();
                     }
                     oldTime = System.currentTimeMillis();
                     beaconTagNo = intentNo;
