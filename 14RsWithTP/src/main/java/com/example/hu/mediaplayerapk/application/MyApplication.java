@@ -54,8 +54,8 @@ public class MyApplication extends Application {
     public static String usb_impacttv_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_IMPACTTV_FILE_NAME;
     public static String usb_event_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_EVENT_FILE_NAME;
     public static String usb_beacon_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_BEACON_EVENT_FILE_NAME;
-    public static String usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME;
-    public static String usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME;
+    public static String usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME+"10";
+    public static String usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME+"10";
     public static boolean existExternalSDCard;
     private boolean isOpen = false;
     protected static MyApplication instance;

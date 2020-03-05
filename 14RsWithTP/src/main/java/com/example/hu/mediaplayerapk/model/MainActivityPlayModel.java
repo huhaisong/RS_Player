@@ -516,7 +516,6 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
 
     private boolean canSetRestartTime = false;
 
-
     public static long reStartTime;
 
     private void playNext(int is_auto_play) {
