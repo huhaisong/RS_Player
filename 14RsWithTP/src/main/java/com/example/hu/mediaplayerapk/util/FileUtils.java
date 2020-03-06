@@ -63,10 +63,10 @@ public class FileUtils {
 
     public static String getLogROOTPATH() {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ITVlog";
+
     }
 
     public static boolean isMoving = false;
-
     public static void movePhotoToTargetFolder(final int beaconTagNo) {
         Log.e(TAG, "movePhotoToTargetFolder: isMoving = " + isMoving + ",beaconTagNo = " + beaconTagNo);
         if (isMoving)
@@ -74,12 +74,13 @@ public class FileUtils {
         new Thread(new Runnable() {
             @Override
             public void run() {
-
-                isMoving = true;
                 String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER;
-                if (!checkHaveFile(parentPath))
+                if (!checkHaveFile(parentPath)){
+                    isMoving = false;
                     return;
+                }
+                isMoving = true;
                 File parentFile = new File(parentPath);
                 File[] filels = parentFile.listFiles();
                 String path = "";
