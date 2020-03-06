@@ -616,7 +616,6 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
 //        if (!checkBeaconAct())
 //            return;
         isPlayingBeaconEvent = true;
-        FileUtils.movePhotoToTargetFolder(beaconTagNo);
         isEVENT = false;
         Log.e(TAG, "Beacon Play---------- " + startPlay());
     }

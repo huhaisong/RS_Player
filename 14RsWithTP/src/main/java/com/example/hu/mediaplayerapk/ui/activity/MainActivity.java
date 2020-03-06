@@ -37,7 +37,10 @@ import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.rockchip.Gpio;
 
+import java.io.File;
+
 import static com.example.hu.mediaplayerapk.model.MainActivityPlayModel.eventNo;
+import static com.example.hu.mediaplayerapk.util.FileUtils.checkHaveFile;
 import static com.example.hu.mediaplayerapk.util.GoToHome.goToHome;
 import static com.example.hu.mediaplayerapk.util.WorkTimeUtil.checkIsWorkTime;
 
@@ -430,8 +433,6 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
 
     private BluetoothActBroadcastReceiver bluetoothActBroadcastReceiver = new BluetoothActBroadcastReceiver();
 
-    private long oldTime = 0;
-
     private class BluetoothActBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -446,21 +447,27 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     if (beaconTagNo == Config.BEACON_TAG_NO_PERSION && intentNo == Config.BEACON_TAG_NO_PERSION) {  //原来没人，现在再次没人
                         return;
                     }
-                    oldTime = System.currentTimeMillis();
+                    //原来有人，现在没人
+                    String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                            + Config.PICKTURE_TEMP_FOLDER;
+                    if (!checkHaveFile(parentPath)) {
+                        motionDetectorService.takePhotoAndMoveToNo();
+                        FileUtils.deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                                + Config.PICKTURE_TEMP_FOLDER);
+                    } else {
+                        FileUtils.movePhotoToTargetFolder(intentNo);
+                    }
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
-                } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来播放没人，现在又有人了
-                    FileUtils.movePhotoToTargetFolder(beaconTagNo);
+                } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来没人，现在又有人了
                     if (motionDetectorService != null) {
                         motionDetectorService.startDetect();
                     }
-                    oldTime = System.currentTimeMillis();
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
                 }
             } else {
                 if (intentNo == Config.BEACON_TAG_PERSION) {//有人
-                    oldTime = System.currentTimeMillis();
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
                     if (motionDetectorService != null) {

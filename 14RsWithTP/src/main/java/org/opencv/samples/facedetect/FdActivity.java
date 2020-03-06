@@ -215,7 +215,7 @@ public class FdActivity extends CameraActivity implements CvCameraViewListener2 
 //            mOpenCvCameraView.takePhoto(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "OUTPUT" + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
             mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                     + Config.PICKTURE_TEMP_FOLDER + File.separator
-                    + TimeUtil.getCurrentFormatTime() + ".jpg");
+                    + TimeUtil.getCurrentFormatTime() + ".jpg",false);
             faceSerialCount = -5000;
             Log.i("takephoto", "takephoto1");
         }

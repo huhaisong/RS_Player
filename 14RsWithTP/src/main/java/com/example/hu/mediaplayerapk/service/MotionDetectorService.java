@@ -136,9 +136,25 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
             public void run() {
                 mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER + File.separator
-                        + TimeUtil.getCurrentFormatTime() + ".jpg");
+                        + TimeUtil.getCurrentFormatTime() + ".jpg",false);
             }
         }, 5000);
+    }
+
+
+    public void takePhotoAndMoveToNo() {
+        Log.e(TAG, "startDetect: ");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                mOpenCvCameraView.enableView();
+                mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
+                        + Config.PICKTURE_TEMP_FOLDER + File.separator
+                        + TimeUtil.getCurrentFormatTime() + ".jpg",true);
+                Looper.loop();
+            }
+        }).start();
     }
 
     public void onCameraViewStarted(int width, int height) {
@@ -175,7 +191,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
             Log.e(TAG, "onCameraFrame: " + Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_TEMP_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
             mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                     + Config.PICKTURE_TEMP_FOLDER + File.separator
-                    + TimeUtil.getCurrentFormatTime() + ".jpg");
+                    + TimeUtil.getCurrentFormatTime() + ".jpg",false);
             faceSerialCount = -5000;
             Log.i("takephoto", "takephoto1");
         }
