@@ -1,9 +1,7 @@
 package com.example.hu.mediaplayerapk.util;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Environment;
-import android.os.StatFs;
 import android.os.storage.StorageManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -31,9 +29,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.regex.Pattern;
-
-import static android.R.attr.lines;
 
 public class FileUtils {
     private static String lock;
@@ -70,15 +65,16 @@ public class FileUtils {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ITVlog";
     }
 
-    public static boolean isMoveing = false;
+    public static boolean isMoving = false;
 
     public static void movePhotoToTargetFolder(final int beaconTagNo) {
-        if (isMoveing)
+        if (isMoving)
             return;
-        isMoveing = true;
         new Thread(new Runnable() {
             @Override
             public void run() {
+
+                isMoving = true;
                 String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER;
                 if (!checkHaveFile(parentPath))
@@ -97,7 +93,7 @@ public class FileUtils {
                 }
                 deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER);
-                isMoveing = false;
+                isMoving = false;
             }
         }).start();
     }
