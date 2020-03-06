@@ -68,6 +68,7 @@ public class FileUtils {
     public static boolean isMoving = false;
 
     public static void movePhotoToTargetFolder(final int beaconTagNo) {
+        Log.e(TAG, "movePhotoToTargetFolder: isMoving = " + isMoving + ",beaconTagNo = " + beaconTagNo);
         if (isMoving)
             return;
         new Thread(new Runnable() {
