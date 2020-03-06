@@ -70,7 +70,12 @@ public class FileUtils {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ITVlog";
     }
 
-    public static void movePhotoToTarget(final int beaconTagNo) {
+    public static boolean isMoveing = false;
+
+    public static void movePhotoToTargetFolder(final int beaconTagNo) {
+        if (isMoveing)
+            return;
+        isMoveing = true;
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -92,6 +97,7 @@ public class FileUtils {
                 }
                 deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER);
+                isMoveing = false;
             }
         }).start();
     }

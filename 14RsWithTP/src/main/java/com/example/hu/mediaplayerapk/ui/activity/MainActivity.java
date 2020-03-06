@@ -155,9 +155,9 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         public void onServiceConnected(ComponentName name, IBinder service) {
             Log.e(TAG, "onServiceConnected: ");
             motionDetectorService = ((MotionDetectorService.MotionDetectorServiceBinder) service).getMotionDetectorService();
-            if (motionDetectorService != null) {
+          /*  if (motionDetectorService != null) {
                 motionDetectorService.startDetect();
-            }
+            }*/
         }
 
         @Override
@@ -450,7 +450,7 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
                     beaconTagNo = intentNo;
                     mainActivityPlayModel.startPlayBeacon();
                 } else if (intentNo == Config.BEACON_TAG_PERSION && beaconTagNo == Config.BEACON_TAG_NO_PERSION) {//原来播放没人，现在又有人了
-                    FileUtils.movePhotoToTarget(beaconTagNo);
+                    FileUtils.movePhotoToTargetFolder(beaconTagNo);
                     if (motionDetectorService != null) {
                         motionDetectorService.startDetect();
                     }

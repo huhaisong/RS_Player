@@ -540,7 +540,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
             }
             if (isPlayingBeaconEvent) {
                 isPlayingBeaconEvent = false;
-                FileUtils.movePhotoToTarget(beaconTagNo);
+                FileUtils.movePhotoToTargetFolder(beaconTagNo);
                 Log.e(TAG, "currentNum >= selectedFileList.size() --------------startPlay()" + startPlay());
                 return;
             }
@@ -616,7 +616,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
 //        if (!checkBeaconAct())
 //            return;
         isPlayingBeaconEvent = true;
-        FileUtils.movePhotoToTarget(beaconTagNo);
+        FileUtils.movePhotoToTargetFolder(beaconTagNo);
         isEVENT = false;
         Log.e(TAG, "Beacon Play---------- " + startPlay());
     }
@@ -1041,7 +1041,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
             }
             sdCardBroadCast = null;
         }
-        FileUtils.movePhotoToTarget(beaconTagNo);
+        FileUtils.movePhotoToTargetFolder(beaconTagNo);
     }
 
     public void onResume() {
