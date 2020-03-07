@@ -111,7 +111,7 @@ public class VideoActivity extends BaseActivity {
             public void onClick(View v) {
                 if (isPreView) {
                     isImpactTv += 1;
-                    isImpactTv = isImpactTv % 3;
+                    isImpactTv = isImpactTv % 5;
                     videoPreViewModel.switchDirectory();
                     contentView.findViewById(R.id.tv_item1).requestFocus();
                 }
