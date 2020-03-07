@@ -108,6 +108,7 @@ public class VideoPreViewModel implements View.OnKeyListener, MediaPlayer.OnErro
                     mMediaPlayerImp.play(selectedVideos.get(currentPage * PAGE_SIZE), false, false);
             }
         });
+
     }
 
     SurfaceView mSurfaceView;
