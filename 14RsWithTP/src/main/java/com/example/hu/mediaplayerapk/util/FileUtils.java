@@ -396,7 +396,6 @@ public class FileUtils {
      * @return 文件删除成功返回true，否则返回false
      */
     public static boolean deleteFile(String filePath) {
-        new Exception().printStackTrace();
         File file = new File(filePath);
         if (file.isFile() && file.exists()) {
             return file.delete();

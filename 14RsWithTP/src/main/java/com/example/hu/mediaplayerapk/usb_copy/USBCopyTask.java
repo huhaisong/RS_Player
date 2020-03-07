@@ -92,20 +92,23 @@ public class USBCopyTask extends AsyncTask<Void, String, Void> {
             if (FileUtils.checkHaveFile(usb_washing_path)) {
                 copyFolder(usb_washing_path, external_washing_path);
             }
+            if (FileUtils.checkHaveFile(usb_beacon_path)) {
+                copyFolder(usb_beacon_path, external_beacon_path);
+            }
         } else {
             if (FileUtils.checkHaveFile(usb_impacttv_path)) {
                 copyFolder(usb_impacttv_path, internal_impactv_path);
-                Log.e(TAG, "doInBackground: copyFolder(Config.USB_STORAGE_IMPACTTV_PATH, Config.INTERNAL_IMPACTTV_FILE_PATH);");
             } else {
                 copyFolder(usb_impactv_path, internal_impactv_path);
-                Log.e(TAG, "doInBackground:  copyFolder(Config.USB_STORAGE_IMPACTTV_PATH14, Config.INTERNAL_IMPACTTV_FILE_PATH);");
             }
             if (FileUtils.checkHaveFile(usb_washing_path)) {
                 copyFolder(usb_washing_path, internal_washing_path);
             }
             if (FileUtils.checkHaveFile(usb_warning_path)) {
-                Log.e(TAG, "doInBackground: checkHaveFile  usb_beacon_path true");
                 copyFolder(usb_warning_path, internal_warning_path);
+            }
+            if (FileUtils.checkHaveFile(usb_beacon_path)) {
+                copyFolder(usb_beacon_path, internal_beacon_path);
             }
         }
         if (FileUtils.checkDirExist(Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC")) {

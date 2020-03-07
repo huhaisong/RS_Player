@@ -191,13 +191,10 @@ public class MainActivity extends com.example.hu.mediaplayerapk.ui.activity.Base
         mainGestureListener = new MainGestureListener(this, volumeAndLightPop);
         mGestureDetector = new GestureDetector(this, mainGestureListener);
         touchModel = new TouchModel(this);
-
-
         IntentFilter bluetoothFilter = new IntentFilter();
         bluetoothFilter.addAction(BLUETOOTH_BROADCAST_NAME);
         registerReceiver(bluetoothActBroadcastReceiver, bluetoothFilter);
         ((MyApplication) this.getApplicationContext()).setOpen(true);  //
-
         // 生成一个BroiadcastReceiver对象
         receiver = new HumanReceive();
         IntentFilter filter = new IntentFilter();

@@ -83,9 +83,30 @@ public class USBCopyActivity extends BaseActivity {
                 || FileUtils.checkHaveFile(usb_impacttv_path)
                 || FileUtils.checkHaveFile(usb_impactv_path)
                 || FileUtils.checkHaveFile(usb_washing_path)
-                || FileUtils.checkDirExist(Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC")
         ) {//是否有相关文件
             chooseDialog = new ChooseDialog(this, getString(R.string.copy_dialog_content));
+            ChooseDialog.ClickListenerInterface listen = new ChooseDialog.ClickListenerInterface() {
+                @Override
+                public void select(int i) {
+                    switch (i) {
+                        case R.id.iv_choose_yes:
+                            USBCopyTask usbCopyTask = new USBCopyTask(USBCopyActivity.this);
+                            usbCopyTask.execute();
+                            chooseDialog.dismiss();
+                            break;
+                        case R.id.iv_choose_no:
+                            chooseDialog.dismiss();
+                            finish();
+                            break;
+                    }
+                }
+            };
+            chooseDialog.setClickListen(listen);
+            chooseDialog.show();
+            findViewById(R.id.layout_usb_copy).setVisibility(View.VISIBLE);
+            ((TextView) findViewById(R.id.tv_usb_copy)).setText(R.string.usb_copy_is_not_have_content);
+        } else if (FileUtils.checkDirExist(Config.USB_STORAGE_ROOT_PATH + File.separator + "SAVED_PIC")) {
+            chooseDialog = new ChooseDialog(this, getString(R.string.copy_to_usb_dialog_content));
             ChooseDialog.ClickListenerInterface listen = new ChooseDialog.ClickListenerInterface() {
                 @Override
                 public void select(int i) {

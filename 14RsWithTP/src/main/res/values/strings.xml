@@ -101,6 +101,7 @@
 
     <!-- usb设置-->
     <string name="copy_dialog_content" tools:ignore="ExtraTranslation"> Copy from USB memory to internal memory will be starting.Is it ok？</string>
+    <string name="copy_to_usb_dialog_content" tools:ignore="ExtraTranslation"> Copy data to UDISK？ Is it ok？</string>
     <string name="usb_copy_prepare" tools:ignore="ExtraTranslation"> is preparing update！</string>
     <string name="usb_copy_is_not_have_content" tools:ignore="ExtraTranslation"> No copyable file is found.\nPlease check USB memory again.</string>
     <string name="usb_copy_is_not_have_folder" tools:ignore="ExtraTranslation">  No copyable folder is found.\nPlease check USB memroy again.</string>

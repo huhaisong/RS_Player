@@ -48,14 +48,13 @@ public class MyApplication extends Application {
     public static String internal_washing_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME;
     public static String internal_warning_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME;
 
-
     public static String usb_system_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_SYSTEM_FILE_NAME;
     public static String usb_impactv_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_IMPACTV_FILE_NAME;
     public static String usb_impacttv_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_IMPACTTV_FILE_NAME;
     public static String usb_event_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_EVENT_FILE_NAME;
     public static String usb_beacon_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_BEACON_EVENT_FILE_NAME;
-    public static String usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME+"10";
-    public static String usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME+"10";
+    public static String usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WASHING_FILE_NAME;
+    public static String usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WARNING_FILE_NAME;
     public static boolean existExternalSDCard;
     private boolean isOpen = false;
     protected static MyApplication instance;
@@ -308,6 +307,8 @@ public class MyApplication extends Application {
                     Config.USB_STORAGE_EVENT_FILE_NAME = "event" + serialNumberDefault;
                     Config.USB_STORAGE_SYSTEM_FILE_NAME = "system" + serialNumberDefault;
                     Config.USB_STORAGE_BEACON_EVENT_FILE_NAME = "beacon" + serialNumberDefault;
+                    Config.USB_STORAGE_WARNING_FILE_NAME = "warning"+serialNumberDefault;
+                    Config.USB_STORAGE_WASHING_FILE_NAME = "washing"+serialNumberDefault;
                     break;
             }
         } catch (Exception e) {
