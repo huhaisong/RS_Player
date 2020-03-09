@@ -152,6 +152,10 @@ public class MyApplication extends Application {
                 getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.IMPACTV_FILE_NAME);
         internal_system_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator +
                 getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.SYSTEM_FILE_NAME);
+        internal_warning_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator +
+                getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME);
+        internal_washing_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator +
+                getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME);
         usb_impactv_path = USB_STORAGE_ROOT_PATH + File.separator +
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_IMPACTV_FILE_NAME);
         usb_impacttv_path = USB_STORAGE_ROOT_PATH + File.separator +
@@ -162,6 +166,10 @@ public class MyApplication extends Application {
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_SYSTEM_FILE_NAME);
         usb_beacon_path = USB_STORAGE_ROOT_PATH + File.separator +
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_BEACON_EVENT_FILE_NAME);
+        usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator +
+                getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WARNING_FILE_NAME);
+        usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator +
+                getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WASHING_FILE_NAME);
         Log.e(TAG, "initFilePath: " +
                 "\nexternal_impactv_path = " + external_impactv_path +
                 "\nexternal_impacttv_path = " + external_impacttv_path +
@@ -175,6 +183,8 @@ public class MyApplication extends Application {
                 "\nusb_impacttv_path = " + usb_impacttv_path +
                 "\nusb_system_path = " + usb_system_path +
                 "\nusb_event_path = " + usb_event_path +
+                "\nusb_warning_path = " + usb_warning_path +
+                "\nusb_washing_path = " + usb_washing_path +
                 "\nusb_beacon_path = " + usb_beacon_path);
     }
 
@@ -205,6 +215,10 @@ public class MyApplication extends Application {
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_SYSTEM_FILE_NAME);
         usb_beacon_path = USB_STORAGE_ROOT_PATH + File.separator +
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_BEACON_EVENT_FILE_NAME);
+        usb_warning_path = USB_STORAGE_ROOT_PATH + File.separator +
+                getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WARNING_FILE_NAME);
+        usb_washing_path = USB_STORAGE_ROOT_PATH + File.separator +
+                getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_WASHING_FILE_NAME);
         Log.e(TAG, "initUSBPath: \n" + USB_STORAGE_ROOT_PATH);
     }
 

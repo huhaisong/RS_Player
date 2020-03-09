@@ -551,6 +551,7 @@ public class FileUtils {
                             || name.equalsIgnoreCase(".m4v")
                             || name.equalsIgnoreCase(".divx")
                             || name.equalsIgnoreCase(".3gpp")
+                            || name.equalsIgnoreCase(".csv")
                             || name.equalsIgnoreCase(".f4v")) {
                         return true;
                     }
