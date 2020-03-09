@@ -177,6 +177,8 @@ public class MyApplication extends Application {
                 "\nexternal_beacon_path = " + external_beacon_path +
                 "\ninternal_beacon_path = " + internal_beacon_path +
                 "\ninternal_event_path = " + internal_event_path +
+                "\ninternal_warning_path = " + internal_warning_path +
+                "\ninternal_washing_path = " + internal_washing_path +
                 "\ninternal_impactv_path = " + internal_impactv_path +
                 "\ninternal_system_path = " + internal_system_path +
                 "\nusb_impactv_path = " + usb_impactv_path +
