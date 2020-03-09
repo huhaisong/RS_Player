@@ -1110,6 +1110,7 @@ public class MainActivityPlayModel implements MediaPlayer.OnCompletionListener, 
 
     private void updateSelectedList() {
         Log.e(TAG, "updateSelectedList: isPlayingBeaconEvent = " + isPlayingBeaconEvent + ",beaconTagNo = " + beaconTagNo);
+        Log.e(TAG, "updateSelectedList: Config.EXTERNAL_FILE_ROOT_PATH = " + Config.EXTERNAL_FILE_ROOT_PATH + ",size = " + (FileUtils.getSize(Config.EXTERNAL_FILE_ROOT_PATH) > 0));
         if (FileUtils.getSize(Config.EXTERNAL_FILE_ROOT_PATH) > 0) {
             if (isPlayingBeaconEvent) {
                 if (beaconTagNo == Config.BEACON_TAG_PERSION) {

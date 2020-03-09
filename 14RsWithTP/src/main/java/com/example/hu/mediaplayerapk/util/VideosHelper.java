@@ -94,9 +94,11 @@ public class VideosHelper {
         ArrayList<String> allVideoFileList;
         boolean isImpacttv;
         if (FileUtils.checkHaveFile(external_impactv_path)) {
+            Log.e(TAG, "getExternalImpactvFileList: FileUtils.checkHaveFile(external_impactv_path) = " + FileUtils.checkHaveFile(external_impactv_path));
             allVideoFileList = (ArrayList<String>) getAllFileList(external_impactv_path);
             isImpacttv = false;
         } else {
+            Log.e(TAG, "getExternalImpactvFileList: FileUtils.checkHaveFile(external_impacttv_path) = " + FileUtils.checkHaveFile(external_impacttv_path));
             allVideoFileList = (ArrayList<String>) getAllFileList(external_impacttv_path);
             isImpacttv = true;
         }
@@ -325,9 +327,9 @@ public class VideosHelper {
 
     public static List<String> getExternalStandFileList() {
         if (FileUtils.checkHaveFile(external_impactv_path)) {
-           return getAllFileList(external_impactv_path);
+            return getAllFileList(external_impactv_path);
         } else {
-          return getAllFileList(external_impacttv_path);
+            return getAllFileList(external_impacttv_path);
         }
     }
 }

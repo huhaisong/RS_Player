@@ -79,7 +79,6 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
                         }
                         is.close();
                         os.close();
-
                         mJavaDetector = new CascadeClassifier(mCascadeFile.getAbsolutePath());
                         if (mJavaDetector.empty()) {
                             Log.e(TAG, "Failed to load cascade classifier");

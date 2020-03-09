@@ -67,6 +67,7 @@ public class FileUtils {
     }
 
     public static boolean isMoving = false;
+
     public static void movePhotoToTargetFolder(final int beaconTagNo) {
         Log.e(TAG, "movePhotoToTargetFolder: isMoving = " + isMoving + ",beaconTagNo = " + beaconTagNo);
         if (isMoving)
@@ -76,7 +77,7 @@ public class FileUtils {
             public void run() {
                 String parentPath = Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER;
-                if (!checkHaveFile(parentPath)){
+                if (!checkHaveFile(parentPath)) {
                     isMoving = false;
                     return;
                 }
@@ -93,6 +94,8 @@ public class FileUtils {
                             + Config.PICKTURE_NG_FOLDER + File.separator + "NG" + filels[0].getName();
                     copyFile(filels[0], new File(path), true);
                 }
+
+                Log.e(TAG, "run: " + beaconTagNo + ",path = " + path);
                 deleteDirectory(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER);
                 isMoving = false;

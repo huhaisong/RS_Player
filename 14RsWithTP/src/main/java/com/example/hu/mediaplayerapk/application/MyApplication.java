@@ -156,6 +156,13 @@ public class MyApplication extends Application {
                 getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME);
         internal_washing_path = Config.INTERNAL_FILE_ROOT_PATH + File.separator +
                 getFileName(Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME);
+
+        external_warning_path = Config.EXTERNAL_FILE_ROOT_PATH + File.separator +
+                getFileName(Config.EXTERNAL_FILE_ROOT_PATH + File.separator + Config.WARNING_FILE_NAME);
+        external_washing_path = Config.EXTERNAL_FILE_ROOT_PATH + File.separator +
+                getFileName(Config.EXTERNAL_FILE_ROOT_PATH + File.separator + Config.WASHING_FILE_NAME);
+
+
         usb_impactv_path = USB_STORAGE_ROOT_PATH + File.separator +
                 getFileName(USB_STORAGE_ROOT_PATH + File.separator + Config.USB_STORAGE_IMPACTV_FILE_NAME);
         usb_impacttv_path = USB_STORAGE_ROOT_PATH + File.separator +
