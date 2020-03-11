@@ -1016,7 +1016,7 @@ public class FileUtils {
         for (int i = 0; i < files.length; i++) {
             if (files[i].isFile()) {
                 String itemFilePath = files[i].getName();
-                itemFilePath.replaceAll("NG", "");
+                itemFilePath = itemFilePath.replaceAll("NG", "");
                 if (itemFilePath.contains(".jpg")) {
                     long time = TimeUtil.getStringToDate(itemFilePath.replaceAll(".jpg", ""));
                     if (Math.abs(time - System.currentTimeMillis()) / 1000 > (30 * 24 * 60 * 60)) {
