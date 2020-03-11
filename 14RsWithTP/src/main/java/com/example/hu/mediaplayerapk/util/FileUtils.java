@@ -935,7 +935,6 @@ public class FileUtils {
             Process p = run.exec(cmd);//执行命令
             BufferedInputStream inputStream = new BufferedInputStream(p.getInputStream());
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 if (-1 != line.indexOf(" /mnt/") && -1 != line.indexOf(" vfat ")) {// 前后均有空格// 前面要有空格，以防断章取义
