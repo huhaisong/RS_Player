@@ -710,7 +710,12 @@ public class FileUtils {
     public static long getSize(String path) {
         List<String> list = StorageUtil.getAllExternalSdcardPath();
         if (!list.contains(path)) {
-            return 0;
+            list = getMountPathList();
+            if (!list.contains(path)) {
+                return 0;
+            } else {
+                return 1;
+            }
         } else {
             return 1;
         }

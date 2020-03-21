@@ -134,11 +134,6 @@ public class MyApplication extends Application {
     }
 
     public void initFilePath() {
-        Log.e(TAG, "initFilePath FileUtils.getMountPathList = " + FileUtils.getMountPathList());
-        FileUtils.getStoragePath(this);
-        StorageUtil.getAllExternalSdcardPath();
-        StorageUtil.isRemovebleSDCardMounted();
-
 //        Log.e(TAG, " FileUtils.getStoragePath = " + FileUtils.getStoragePath(this));
 //        Log.e(TAG, " FileUtils.GetAllSDPath = " + FileUtils.GetAllSDPath());
         alterRootPath();
@@ -204,7 +199,7 @@ public class MyApplication extends Application {
     }
 
     public void initUSBPath(String dataPath) {
-        List<String> paths2 = StorageUtil.getAllExternalSdcardPath();
+        List<String> paths2 =  FileUtils.getMountPathList();
         Log.e(TAG, " initUSBPath FileUtils.getMountPathList = " + FileUtils.getMountPathList() + "dataPath = " + dataPath);
         boolean containPath = false;
         for (String path : paths2) {
@@ -255,6 +250,14 @@ public class MyApplication extends Application {
         }
         List<String> paths2 = StorageUtil.getAllExternalSdcardPath();
         for (String path : paths2) {
+            if (path.contains("ext")) {
+                Config.EXTERNAL_FILE_ROOT_PATH = path;
+            } else if (path.contains("usb")) {
+                USB_STORAGE_ROOT_PATH = path;
+            }
+        }
+        List<String> paths3 = FileUtils.getMountPathList();
+        for (String path : paths3) {
             if (path.contains("ext")) {
                 Config.EXTERNAL_FILE_ROOT_PATH = path;
             } else if (path.contains("usb")) {
