@@ -18,8 +18,10 @@ import com.example.hu.mediaplayerapk.config.Config;
 import com.example.hu.mediaplayerapk.ui.activity.MainActivity;
 import com.example.hu.mediaplayerapk.util.FileUtils;
 import com.example.hu.mediaplayerapk.util.SPUtils;
+import com.example.hu.mediaplayerapk.util.StorageUtil;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -133,6 +135,10 @@ public class MyApplication extends Application {
 
     public void initFilePath() {
         Log.e(TAG, "initFilePath FileUtils.getMountPathList = " + FileUtils.getMountPathList());
+        FileUtils.getStoragePath(this);
+        StorageUtil.getAllExternalSdcardPath();
+        StorageUtil.isRemovebleSDCardMounted();
+
 //        Log.e(TAG, " FileUtils.getStoragePath = " + FileUtils.getStoragePath(this));
 //        Log.e(TAG, " FileUtils.GetAllSDPath = " + FileUtils.GetAllSDPath());
         alterRootPath();
@@ -330,8 +336,8 @@ public class MyApplication extends Application {
                     Config.USB_STORAGE_EVENT_FILE_NAME = "event" + serialNumberDefault;
                     Config.USB_STORAGE_SYSTEM_FILE_NAME = "system" + serialNumberDefault;
                     Config.USB_STORAGE_BEACON_EVENT_FILE_NAME = "beacon" + serialNumberDefault;
-                    Config.USB_STORAGE_WARNING_FILE_NAME = "warning"+serialNumberDefault;
-                    Config.USB_STORAGE_WASHING_FILE_NAME = "washing"+serialNumberDefault;
+                    Config.USB_STORAGE_WARNING_FILE_NAME = "warning" + serialNumberDefault;
+                    Config.USB_STORAGE_WASHING_FILE_NAME = "washing" + serialNumberDefault;
                     break;
             }
         } catch (Exception e) {
