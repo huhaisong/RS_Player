@@ -708,7 +708,7 @@ public class FileUtils {
     private static final String TAG = "FileUtils";
 
     public static long getSize(String path) {
-        List<String> list = getMountPathList();
+        List<String> list = StorageUtil.getAllExternalSdcardPath();
         if (!list.contains(path)) {
             return 0;
         } else {

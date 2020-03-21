@@ -204,7 +204,7 @@ public class MyApplication extends Application {
     }
 
     public void initUSBPath(String dataPath) {
-        List<String> paths2 = FileUtils.getMountPathList();
+        List<String> paths2 = StorageUtil.getAllExternalSdcardPath();
         Log.e(TAG, " initUSBPath FileUtils.getMountPathList = " + FileUtils.getMountPathList() + "dataPath = " + dataPath);
         boolean containPath = false;
         for (String path : paths2) {
@@ -253,7 +253,7 @@ public class MyApplication extends Application {
                 USB_STORAGE_ROOT_PATH = path;
             }
         }
-        List<String> paths2 = FileUtils.getMountPathList();
+        List<String> paths2 = StorageUtil.getAllExternalSdcardPath();
         for (String path : paths2) {
             if (path.contains("ext")) {
                 Config.EXTERNAL_FILE_ROOT_PATH = path;
