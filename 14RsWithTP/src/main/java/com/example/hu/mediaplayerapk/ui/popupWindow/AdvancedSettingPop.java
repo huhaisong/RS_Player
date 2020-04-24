@@ -995,7 +995,7 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                 case R.id.tv_advanced_setting_Firmware_Version:
                 case R.id.tv_advanced_setting_Language:
                 case R.id.tv_advanced_setting_Reset:
-                case R.id.tv_advanced_setting_eco_mode:
+//                case R.id.tv_advanced_setting_eco_mode:
                 case R.id.tv_advanced_setting_image_save:
                 case R.id.tv_advanced_setting_beacon: {
                     if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
@@ -1018,7 +1018,7 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                     }
                 }
                 break;
-                case R.id.tv_advanced_setting_face_check: {
+               /* case R.id.tv_advanced_setting_face_check: {
                     if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
                         return true;
                     } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
@@ -1031,7 +1031,7 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                         }
                     }
                 }
-                break;
+                break;*/
 
                 //dateSetting-------------------------------------------------------------------
                 case R.id.tv_advanced_data_day:
@@ -1309,12 +1309,12 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                 case R.id.tv_advanced_display_ratio_uniform:
                     OSDSettingActivity.initIntroduce(mActivity.getString(R.string.introduce_uniform));
                     break;
-                case R.id.tv_advanced_setting_face_check:
+               /* case R.id.tv_advanced_setting_face_check:
                     OSDSettingActivity.initIntroduce(mActivity.getString(R.string.introduce_Face_check));
                     break;
                 case R.id.tv_advanced_setting_eco_mode:
                     OSDSettingActivity.initIntroduce(mActivity.getString(R.string.introduce_ECO_mode));
-                    break;
+                    break;*/
                 case R.id.tv_advanced_setting_beacon:
                     OSDSettingActivity.initIntroduce(mActivity.getString(R.string.introduce_Beacon_mode));
                     break;
@@ -1358,18 +1358,18 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
             case R.id.tv_advanced_setting_Reset:
                 showReset(v);
                 break;
-            case R.id.tv_advanced_setting_eco_mode:
+        /*    case R.id.tv_advanced_setting_eco_mode:
                 showECOMode(v);
-                break;
+                break;*/
             case R.id.tv_advanced_setting_image_save:
                 showImageSave(v);
                 break;
             case R.id.tv_advanced_setting_beacon:
                 showBeaconMode(v);
                 break;
-            case R.id.tv_advanced_setting_face_check:
+          /*  case R.id.tv_advanced_setting_face_check:
                 showFaceCheck(v);
-                break;
+                break;*/
 
             //displayRatio
             case tv_advanced_display_ratio_full:
