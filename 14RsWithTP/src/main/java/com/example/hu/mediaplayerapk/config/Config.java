@@ -11,6 +11,9 @@ public class Config {
     //eco
     public static final String ECO_MODE_STATE = "eco_mode_state";
 
+    //保存照片
+    public static final String SAVE_IMAGE_STATE = "save_image_state";  // 值为0则为关闭状态，否则为打开状态
+
     public static final String BEACON_MODE_STATE = "eco_mode_state";  //  -1 代表开启，1代表关闭
 
     public static final String IMAGE_DIRECTION = "image_direction";

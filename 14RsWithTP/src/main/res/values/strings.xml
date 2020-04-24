@@ -64,6 +64,8 @@
     <string name="introduce_Factory_Setting" tools:ignore="ExtraTranslation">You can return to factory settings.</string>
     <string name="introduce_Hdmi_Setting" tools:ignore="ExtraTranslation">You can change HDMI output mode here.</string>
 
+    <string name="introduce_image_save" tools:ignore="ExtraTranslation">Appointed file will be displayed in sence of Beacon detected.</string>
+
     <string name="uniform">UNIFORM</string>
     <string name="full">FULL</string>
     <string name="english">English</string>
@@ -135,4 +137,5 @@
     <string name="set_time" tools:ignore="ExtraTranslation">setting time</string>
     <string name="set_reboot_hour" tools:ignore="ExtraTranslation">setting reboot hour</string>
     <string name="hdmi_out_model" tools:ignore="ExtraTranslation">HDMI output</string>
+    <string name="image_save_setting" tools:ignore="ExtraTranslation">Image Save Settings</string>
 </resources>

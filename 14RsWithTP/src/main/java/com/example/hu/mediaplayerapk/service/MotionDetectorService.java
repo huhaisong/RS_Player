@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.example.hu.mediaplayerapk.R;
 import com.example.hu.mediaplayerapk.config.Config;
+import com.example.hu.mediaplayerapk.util.SPUtils;
 import com.example.hu.mediaplayerapk.util.TimeUtil;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -122,6 +123,8 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
 
     public void startDetect() {
         Log.e(TAG, "startDetect: ");
+        if (SPUtils.getInt(getBaseContext(), Config.SAVE_IMAGE_STATE) == 0)
+            return;
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -135,14 +138,16 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
             public void run() {
                 mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER + File.separator
-                        + TimeUtil.getCurrentFormatTime() + ".jpg",false);
+                        + TimeUtil.getCurrentFormatTime() + ".jpg", false);
             }
         }, 5000);
     }
 
 
     public void takePhotoAndMoveToNo() {
-        Log.e(TAG, "startDetect: ");
+        Log.e(TAG, "takePhotoAndMoveToNo: ");
+        if (SPUtils.getInt(getBaseContext(), Config.SAVE_IMAGE_STATE) == 0)
+            return;
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -150,7 +155,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
                 mOpenCvCameraView.enableView();
                 mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                         + Config.PICKTURE_TEMP_FOLDER + File.separator
-                        + TimeUtil.getCurrentFormatTime() + ".jpg",true);
+                        + TimeUtil.getCurrentFormatTime() + ".jpg", true);
                 Looper.loop();
             }
         }).start();
@@ -190,7 +195,7 @@ public class MotionDetectorService extends Service implements CameraBridgeViewBa
             Log.e(TAG, "onCameraFrame: " + Config.INTERNAL_FILE_ROOT_PATH + File.separator + Config.PICKTURE_TEMP_FOLDER + File.separator + TimeUtil.getCurrentFormatTime() + ".jpg");
             mOpenCvCameraView.takePhoto(Config.INTERNAL_FILE_ROOT_PATH + File.separator
                     + Config.PICKTURE_TEMP_FOLDER + File.separator
-                    + TimeUtil.getCurrentFormatTime() + ".jpg",false);
+                    + TimeUtil.getCurrentFormatTime() + ".jpg", false);
             faceSerialCount = -5000;
             Log.i("takephoto", "takephoto1");
         }

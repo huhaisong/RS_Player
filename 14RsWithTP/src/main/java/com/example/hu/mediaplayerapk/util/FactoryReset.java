@@ -71,5 +71,8 @@ public class FactoryReset {
         SPUtils.putInt(mContext, Config.IMAGE_BGM_EVENT, Config.IMAGE_BGM_OFF);
         FileUtils.saveTxtFile(external_event_path + File.separator + Config.EVENT_BGM_FILE_LIST_FILE_NAME, "");
         FileUtils.saveTxtFile(internal_event_path + File.separator + Config.EVENT_BGM_FILE_LIST_FILE_NAME, "");
+
+        //设置是否拍照
+        SPUtils.putInt(mContext, Config.SAVE_IMAGE_STATE, 1);
     }
 }

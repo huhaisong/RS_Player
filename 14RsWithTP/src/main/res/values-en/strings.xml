@@ -17,6 +17,8 @@
     <string name="introduce_image_setting" tools:ignore="ExtraTranslation">You can play BGM with photo slideshow.</string>
     <string name="introduce_quit" tools:ignore="ExtraTranslation">Exit setting menu</string>
 
+    <string name="introduce_image_save" tools:ignore="ExtraTranslation">Appointed file will be displayed in sence of Beacon detected.</string>
+
     <!--时间设置-->
     <string name="time_setting_work_time">New Registration Settings</string>
     <string name="time_setting_holiday_time">Holiday Settings</string>
@@ -135,4 +137,5 @@
     <string name="set_time" tools:ignore="ExtraTranslation">setting time</string>
     <string name="set_reboot_hour" tools:ignore="ExtraTranslation">setting reboot hour</string>
     <string name="hdmi_out_model" tools:ignore="ExtraTranslation">HDMI output</string>
+    <string name="image_save_setting" tools:ignore="ExtraTranslation">Image Save Settings</string>
 </resources>

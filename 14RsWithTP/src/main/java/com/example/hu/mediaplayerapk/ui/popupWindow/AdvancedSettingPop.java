@@ -50,9 +50,10 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
     private LayoutInflater layoutInflater;
     private TextView dataTextView;
     private TextView factoryTextView;
-    private TextView ecoModeTextView;
+    //    private TextView ecoModeTextView;
     private TextView beaconModeTextView;
     private TextView firmWareVersionTextView;
+    private TextView imageSaveTextView;
     private Handler quitHandler;
 
     public AdvancedSettingPop(Activity mActivity, Handler handler) {
@@ -92,10 +93,11 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
         firmWareVersionTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_Firmware_Version);
         TextView languageTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_Language);
         TextView resetTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_Reset);
-        ecoModeTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_eco_mode);
+//        ecoModeTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_eco_mode);
         beaconModeTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_beacon);
-        TextView faceCheckTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_face_check);
-
+//        TextView faceCheckTextView = (TextView) contentView.findViewById(R.id.tv_advanced_setting_face_check);
+        imageSaveTextView = contentView.findViewById(R.id.tv_advanced_setting_image_save);
+        imageSaveTextView.setOnKeyListener(this);
         dataTextView.setOnKeyListener(this);
         displayRatioTextView.setOnKeyListener(this);
         factoryTextView.setOnKeyListener(this);
@@ -103,8 +105,8 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
         languageTextView.setOnKeyListener(this);
         resetTextView.setOnKeyListener(this);
         timeTextView.setOnKeyListener(this);
-        faceCheckTextView.setOnKeyListener(this);
-        ecoModeTextView.setOnKeyListener(this);
+//        faceCheckTextView.setOnKeyListener(this);
+//        ecoModeTextView.setOnKeyListener(this);
         beaconModeTextView.setOnKeyListener(this);
 
         dataTextView.setOnClickListener(this);
@@ -114,9 +116,10 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
         languageTextView.setOnClickListener(this);
         resetTextView.setOnClickListener(this);
         timeTextView.setOnClickListener(this);
-        faceCheckTextView.setOnClickListener(this);
-        ecoModeTextView.setOnClickListener(this);
+//        faceCheckTextView.setOnClickListener(this);
+//        ecoModeTextView.setOnClickListener(this);
         beaconModeTextView.setOnClickListener(this);
+        imageSaveTextView.setOnClickListener(this);
 
         dataTextView.setOnFocusChangeListener(this);
         displayRatioTextView.setOnFocusChangeListener(this);
@@ -125,14 +128,15 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
         languageTextView.setOnFocusChangeListener(this);
         resetTextView.setOnFocusChangeListener(this);
         timeTextView.setOnFocusChangeListener(this);
-        faceCheckTextView.setOnFocusChangeListener(this);
-        ecoModeTextView.setOnFocusChangeListener(this);
+        imageSaveTextView.setOnFocusChangeListener(this);
+//        faceCheckTextView.setOnFocusChangeListener(this);
+//        ecoModeTextView.setOnFocusChangeListener(this);
         beaconModeTextView.setOnFocusChangeListener(this);
         updateECOMode();
     }
 
     private void updateECOMode() {
-        if (SPUtils.getInt(mActivity, Config.CHECK_FACE_STATE) == 1 || SPUtils.getInt(mActivity, Config.CHECK_FACE_STATE) == 2) {
+       /* if (SPUtils.getInt(mActivity, Config.CHECK_FACE_STATE) == 1 || SPUtils.getInt(mActivity, Config.CHECK_FACE_STATE) == 2) {
             ecoModeTextView.setTextColor(ContextCompat.getColor(mActivity, R.color.white));
             ecoModeTextView.setFocusableInTouchMode(true);
             ecoModeTextView.setFocusable(true);
@@ -140,7 +144,7 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
             ecoModeTextView.setTextColor(ContextCompat.getColor(mActivity, R.color.gray_white));
             ecoModeTextView.setFocusableInTouchMode(false);
             ecoModeTextView.setFocusable(false);
-        }
+        }*/
     }
 
     /*date----------------------------------------------------------------*/
@@ -913,6 +917,44 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
     }
     /*beacon_mode---------------------------------------------------------------*/
 
+    /*image_save---------------------------------------------------------------*/
+    private void showImageSave(View view) {
+        View contentView = layoutInflater.inflate(R.layout.advanced_face_check_pop, null);
+        final PopupWindow saveImagePop = new PopupWindow(contentView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+        int xPos = (int) (location[0] + view.getWidth() + 20 * screenWidthRatio);
+        int yPos = (int) (location[1] - 3 * view.getHeight() + 25 * screenHeightRatio);
+
+        TextView offTextView = (TextView) contentView.findViewById(R.id.tv_advanced_check_face_off);
+        TextView nearTextView = (TextView) contentView.findViewById(R.id.tv_advanced_check_face_near);
+        offTextView.setTextColor(ContextCompat.getColor(mActivity, R.color.white));
+        nearTextView.setTextColor(ContextCompat.getColor(mActivity, R.color.white));
+        if (SPUtils.getInt(mActivity, Config.SAVE_IMAGE_STATE) == 0) {
+            offTextView.setTextColor(ContextCompat.getColor(mActivity, R.color.yellow));
+        } else {
+            nearTextView.setTextColor(ContextCompat.getColor(mActivity, R.color.yellow));
+        }
+        offTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveImagePop.dismiss();
+                putInt(mActivity, Config.SAVE_IMAGE_STATE, 0);
+            }
+        });
+        nearTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveImagePop.dismiss();
+                putInt(mActivity, Config.SAVE_IMAGE_STATE, 1);
+            }
+        });
+        saveImagePop.setBackgroundDrawable(ContextCompat.getDrawable(mActivity, R.color.black));
+        saveImagePop.setFocusable(true);
+        saveImagePop.setTouchable(true);
+        saveImagePop.showAsDropDown(mActivity.findViewById(R.id.timer_setting_layout), xPos, yPos);
+    }
+    /*image_save---------------------------------------------------------------*/
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -949,7 +991,13 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                     }
                 }
                 break;
-                case R.id.tv_advanced_setting_Display_Ratio: {
+                case R.id.tv_advanced_setting_Display_Ratio:
+                case R.id.tv_advanced_setting_Firmware_Version:
+                case R.id.tv_advanced_setting_Language:
+                case R.id.tv_advanced_setting_Reset:
+                case R.id.tv_advanced_setting_eco_mode:
+                case R.id.tv_advanced_setting_image_save:
+                case R.id.tv_advanced_setting_beacon: {
                     if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
                         return true;
                     } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
@@ -963,51 +1011,6 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                         return true;
                     } else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN) {
                         dataTextView.requestFocus();
-                        return true;
-                    } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
-                        advancedSettingPop.dismiss();
-                        return true;
-                    }
-                }
-                break;
-                case R.id.tv_advanced_setting_Firmware_Version: {
-                    if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
-                        return true;
-                    } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
-                        advancedSettingPop.dismiss();
-                        return true;
-                    }
-                }
-                break;
-                case R.id.tv_advanced_setting_Language: {
-                    if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
-                        return true;
-                    } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
-                        advancedSettingPop.dismiss();
-                        return true;
-                    }
-                }
-                break;
-                case R.id.tv_advanced_setting_Reset: {
-                    if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
-                        return true;
-                    } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
-                        advancedSettingPop.dismiss();
-                        return true;
-                    }
-                }
-                break;
-                case R.id.tv_advanced_setting_eco_mode: {
-                    if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
-                        return true;
-                    } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
-                        advancedSettingPop.dismiss();
-                        return true;
-                    }
-                }
-                break;
-                case R.id.tv_advanced_setting_beacon: {
-                    if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
                         return true;
                     } else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
                         advancedSettingPop.dismiss();
@@ -1315,6 +1318,9 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                 case R.id.tv_advanced_setting_beacon:
                     OSDSettingActivity.initIntroduce(mActivity.getString(R.string.introduce_Beacon_mode));
                     break;
+                case R.id.tv_advanced_setting_image_save:
+                    OSDSettingActivity.initIntroduce(mActivity.getString(R.string.introduce_image_save));
+                    break;
                 default:
                     break;
             }
@@ -1354,6 +1360,9 @@ public class AdvancedSettingPop implements View.OnKeyListener, View.OnFocusChang
                 break;
             case R.id.tv_advanced_setting_eco_mode:
                 showECOMode(v);
+                break;
+            case R.id.tv_advanced_setting_image_save:
+                showImageSave(v);
                 break;
             case R.id.tv_advanced_setting_beacon:
                 showBeaconMode(v);

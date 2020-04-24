@@ -51,8 +51,8 @@ public class VideoPreViewModel implements View.OnKeyListener, MediaPlayer.OnErro
     private MediaPlayerImp mMediaPlayerImp;
     private int totalPage = 0;
     private List<String> impactTvVideos = new ArrayList<>();
-    private List<String> eventVideos = new ArrayList<>();
-    private List<String> beaconVideos = new ArrayList<>();
+//    private List<String> eventVideos = new ArrayList<>();
+//    private List<String> beaconVideos = new ArrayList<>();
     private List<String> warningVideos = new ArrayList<>();
     private List<String> washingVideos = new ArrayList<>();
     public static int isImpactTv = 0;  //0表示impactv，1表示event，2表示beacon
@@ -77,14 +77,14 @@ public class VideoPreViewModel implements View.OnKeyListener, MediaPlayer.OnErro
             } else {
                 impactTvVideos = getVideoList(external_impacttv_path);
             }
-            eventVideos = getVideoList(external_event_path);
-            beaconVideos = getVideoList(external_beacon_path);
+//            eventVideos = getVideoList(external_event_path);
+//            beaconVideos = getVideoList(external_beacon_path);
             warningVideos = getVideoList(external_warning_path);
             washingVideos = getVideoList(external_washing_path);
         } else {
             impactTvVideos = getVideoList(internal_impactv_path);
-            eventVideos = getVideoList(internal_event_path);
-            beaconVideos = getVideoList(internal_beacon_path);
+//            eventVideos = getVideoList(internal_event_path);
+//            beaconVideos = getVideoList(internal_beacon_path);
             warningVideos = getVideoList(internal_warning_path);
             washingVideos = getVideoList(internal_washing_path);
         }
@@ -158,16 +158,16 @@ public class VideoPreViewModel implements View.OnKeyListener, MediaPlayer.OnErro
             case 0:
                 selectedVideos = impactTvVideos;
                 break;
-            case 1:
+        /*    case 1:
                 selectedVideos = eventVideos;
                 break;
             case 2:
                 selectedVideos = beaconVideos;
-                break;
-            case 3:
+                break;*/
+            case 1:
                 selectedVideos = washingVideos;
                 break;
-            case 4:
+            case 2:
                 selectedVideos = warningVideos;
                 break;
         }
@@ -196,16 +196,16 @@ public class VideoPreViewModel implements View.OnKeyListener, MediaPlayer.OnErro
             case 0:
                 content = "Impactv ";
                 break;
-            case 1:
+          /*  case 1:
                 content = "Event ";
                 break;
             case 2:
                 content = "Beacon ";
-                break;
-            case 3:
+                break;*/
+            case 1:
                 content = "Washing ";
                 break;
-            case 4:
+            case 2:
                 content = "Warning ";
                 break;
         }
