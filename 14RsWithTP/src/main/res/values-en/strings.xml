@@ -17,7 +17,7 @@
     <string name="introduce_image_setting" tools:ignore="ExtraTranslation">You can play BGM with photo slideshow.</string>
     <string name="introduce_quit" tools:ignore="ExtraTranslation">Exit setting menu</string>
 
-    <string name="introduce_image_save" tools:ignore="ExtraTranslation">Appointed file will be displayed in sence of Beacon detected.</string>
+    <string name="introduce_image_save" tools:ignore="ExtraTranslation">You can choose to save the photo files captured.</string>
 
     <!--时间设置-->
     <string name="time_setting_work_time">New Registration Settings</string>
@@ -102,8 +102,8 @@
     <string name="introduce_image_setting_bgm" tools:ignore="ExtraTranslation">The maximum of 10 mp3 files can be programed as BGM.</string>
 
     <!-- usb设置-->
-    <string name="copy_dialog_content" tools:ignore="ExtraTranslation"> Copy from USB memory to internal memory will be starting.Is it ok？</string>
-    <string name="copy_to_usb_dialog_content" tools:ignore="ExtraTranslation"> Copy data to UDISK？ Is it ok？</string>
+    <string name="copy_dialog_content" tools:ignore="ExtraTranslation"> Copy from USB memory to internal memory will be starting.\nIs it ok？</string>
+    <string name="copy_to_usb_dialog_content" tools:ignore="ExtraTranslation"> Copy data to UDISK？ \nIs it ok？</string>
     <string name="usb_copy_prepare" tools:ignore="ExtraTranslation"> is preparing update！</string>
     <string name="usb_copy_is_not_have_content" tools:ignore="ExtraTranslation"> No copyable file is found.\nPlease check USB memory again.</string>
     <string name="usb_copy_is_not_have_folder" tools:ignore="ExtraTranslation">  No copyable folder is found.\nPlease check USB memroy again.</string>

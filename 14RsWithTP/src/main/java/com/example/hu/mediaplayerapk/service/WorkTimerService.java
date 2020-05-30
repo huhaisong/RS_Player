@@ -146,7 +146,8 @@ public class WorkTimerService extends Service {
                     if (item.getBeaconNo() == beaconNum)
                         beaconBean = item;
                 }
-                scheduleBeanArrayList = beaconBean.getScheduleBeans();
+                if (beaconBean != null)
+                    scheduleBeanArrayList = beaconBean.getScheduleBeans();
                 return;
             }
             if (isEVENT) {
@@ -175,7 +176,7 @@ public class WorkTimerService extends Service {
                 }
                 if (beaconBean != null) {
                     scheduleBeanArrayList = beaconBean.getScheduleBeans();
-                }else {
+                } else {
 //                    MainActivity.isPlayingBeaconEvent = false;
                     isSchedule = false;
                 }
@@ -255,7 +256,7 @@ public class WorkTimerService extends Service {
                                     if (lastEventSchedule.getNum() != scheduleBean.getNum()) {
                                         mHandler.sendEmptyMessage(3333);
                                         lastEventSchedule = scheduleBean;
-                                    }else {
+                                    } else {
                                         mHandler.sendEmptyMessage(2222);
                                     }
                                 }
@@ -270,7 +271,7 @@ public class WorkTimerService extends Service {
                                             Log.d(TAG, "lastImpacttvSchedule = " + lastBeaconSchedule.toString());
                                             mHandler.sendEmptyMessage(3333);
                                             lastBeaconSchedule = scheduleBean;
-                                        }else {
+                                        } else {
                                             mHandler.sendEmptyMessage(2222);
                                         }
                                     }
@@ -285,7 +286,7 @@ public class WorkTimerService extends Service {
                                         Log.d(TAG, "lastImpacttvSchedule = " + lastImpacttvSchedule.toString());
                                         mHandler.sendEmptyMessage(3333);
                                         lastImpacttvSchedule = scheduleBean;
-                                    }else {
+                                    } else {
                                         mHandler.sendEmptyMessage(2222);
                                     }
                                 }
@@ -336,7 +337,7 @@ public class WorkTimerService extends Service {
                                                 Log.e(TAG, "lastSchedule != scheduleBean\n\n\n");
                                                 mHandler.sendEmptyMessage(3333);
                                                 lastEventSchedule = scheduleBean;
-                                            }else {
+                                            } else {
                                                 mHandler.sendEmptyMessage(2222);
                                             }
                                         }
@@ -349,7 +350,7 @@ public class WorkTimerService extends Service {
                                                 if (lastBeaconSchedule.getNum() != scheduleBean.getNum()) {
                                                     mHandler.sendEmptyMessage(3333);
                                                     lastBeaconSchedule = scheduleBean;
-                                                }else {
+                                                } else {
                                                     mHandler.sendEmptyMessage(2222);
                                                 }
                                             }
@@ -363,7 +364,7 @@ public class WorkTimerService extends Service {
                                                 Log.e(TAG, "lastSchedule != scheduleBean\n\n\n");
                                                 mHandler.sendEmptyMessage(3333);
                                                 lastImpacttvSchedule = scheduleBean;
-                                            }else {
+                                            } else {
                                                 mHandler.sendEmptyMessage(2222);
                                             }
                                         }

@@ -16,7 +16,7 @@
     <string name="introduce_image_setting" tools:ignore="ExtraTranslation">BGMを再生しながら、静止画のスライドショーを行うことができます</string>
     <string name="introduce_quit" tools:ignore="ExtraTranslation">設定画面を終了します</string>
 
-    <string name="introduce_image_save" tools:ignore="ExtraTranslation">Appointed file will be displayed in sence of Beacon detected.</string>
+    <string name="introduce_image_save" tools:ignore="ExtraTranslation">撮影した写真ファイルを保存することかできます</string>
 
     <!--时间设置-->
     <string name="time_setting_work_time">新規登録設定</string>
@@ -100,8 +100,8 @@
     <string name="introduce_image_setting_bgm" tools:ignore="ExtraTranslation">最大10曲音楽ファイルかちBGMをプログラム再生することができます</string>
 
     <!--usb设置-->
-    <string name="copy_dialog_content" tools:ignore="ExtraTranslation">USBコピーを開始いたします。\n よろしいですか？</string>
-    <string name="copy_to_usb_dialog_content" tools:ignore="ExtraTranslation">USBへ画像コピーいたします。\n よろしいですか？</string>
+    <string name="copy_dialog_content" tools:ignore="ExtraTranslation">USBコピーを開始いたします\n よろしいですか？</string>
+    <string name="copy_to_usb_dialog_content" tools:ignore="ExtraTranslation">USBへ画像コピーいたします\n よろしいですか？</string>
     <string name="usb_copy_prepare" tools:ignore="ExtraTranslation"> is preparing copy！</string>
     <string name="usb_copy_is_not_have_content" tools:ignore="ExtraTranslation">複製可能なファイルが見つかりません\nUSBメモリを再確認してください</string>
     <string name="usb_copy_is_not_have_folder" tools:ignore="ExtraTranslation">複製可能なフォルダが見つかりません\nUSBメモリを再確認してください</string>

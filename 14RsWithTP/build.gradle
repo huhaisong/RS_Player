@@ -8,8 +8,8 @@ android {
         applicationId "com.example.hu.mediaplayerapk"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2002
-        versionName "V.14RS.2.00.2"  //如果以basic命名则版本号要加20  V.Basic.1.02.3
+        versionCode 2003
+        versionName "V.14RS.2.00.3"  //如果以basic命名则版本号要加20  V.Basic.1.02.3
 
         externalNativeBuild {
             cmake {
