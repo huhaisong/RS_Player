@@ -148,6 +148,10 @@ public class WorkTimerService extends Service {
                 }
                 if (beaconBean != null)
                     scheduleBeanArrayList = beaconBean.getScheduleBeans();
+                else {
+//                    MainActivity.isPlayingBeaconEvent = false;
+                    isSchedule = false;
+                }
                 return;
             }
             if (isEVENT) {
